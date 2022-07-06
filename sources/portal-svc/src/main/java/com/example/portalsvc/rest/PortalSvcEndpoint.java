@@ -38,7 +38,7 @@ public class PortalSvcEndpoint {
 
 	private static Properties props = new Properties();
 	private static Logger logger = Logger.getLogger(PortalSvcEndpoint.class.getName());
-	private static String ingressSubDomain = "portal-svc-governance.cp-india-q3-f2c6cdc6801be85fd188b09d006f13e3-0000.jp-tok.containers.appdomain.cloud";
+	private static String ingressSubDomain = "portal-svc-governance"+ {{ingress-sub-domain}};
 
 	static {
 		try {
