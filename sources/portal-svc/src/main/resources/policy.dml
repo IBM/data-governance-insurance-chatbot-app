@@ -1,0 +1,1 @@
+INSERT INTO  "{{schema}}"."POLICIES" ("POLICY_DT","STATUS","ITEM","AMOUNT","CCNUM_FIRST12_DIGITS","CCNUM_LAST4_DIGITS","EXPIRY","CUST_ID","MODE") VALUES('{{orderdt}}','{{status}}','{{item}}',{{amount}},'{{ccnumfirst12}}','{{ccnumlast4}}','{{expiry}}',{{custid}},'{{mode}}');

@@ -1,0 +1,2 @@
+DROP TABLE {{schema}}.POLICYHOLDER;
+DROP TABLE {{schema}}.POLICIES;

@@ -1,0 +1,26 @@
+{
+  "schemas": [
+    "urn:ietf:params:scim:schemas:core:2.0:User",
+    "urn:ietf:params:scim:schemas:extension:ibm:2.0:User"
+  ],
+  "userName": "{{username}}",
+  "name": {
+    "familyName": "{{familyname}}",
+    "givenName": "{{givenname}}"
+  },
+  "emails": [
+    {
+      "value": "{{email}}",
+      "type": "work"
+    }
+  ],
+  "phoneNumbers": [
+    {
+      "value": "{{mobilenumber}}",
+      "type": "mobile"
+    }
+  ],
+  "urn:ietf:params:scim:schemas:extension:ibm:2.0:User": {
+    "userCategory": "regular"
+  }
+}

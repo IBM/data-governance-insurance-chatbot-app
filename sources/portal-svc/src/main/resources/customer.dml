@@ -1,0 +1,1 @@
+INSERT INTO  "{{schema}}"."POLICYHOLDER" ("FIRST_NAME","MIDDLE_NAME","LAST_NAME","ADDRESS","E_MAIL","MOBILE","PASSWORD") VALUES('{{fname}}','{{mname}}', '{{lname}}','{{address}}', '{{email}}','{{mobile}}', '{{password}}');

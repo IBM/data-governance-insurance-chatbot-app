@@ -1,0 +1,15 @@
+FROM ibmjava:8-sdk
+LABEL maintainer="IBM Java Engineering at IBM Cloud"
+
+# hadolint ignore=DL3008
+RUN apt-get update && apt-get install --no-install-recommends -y maven \
+ && apt-get clean \
+ && rm -rf /var/lib/apt/lists/*
+
+ENV PATH /project/target/liberty/wlp/bin/:$PATH
+
+ARG bx_dev_user=root
+ARG bx_dev_userid=1000
+ENV BX_DEV_USER $bx_dev_user
+ENV BX_DEV_USERID $bx_dev_userid
+RUN if [ $bx_dev_user != "root" ]; then useradd -l -ms /bin/bash -u $bx_dev_userid $bx_dev_user; fi
