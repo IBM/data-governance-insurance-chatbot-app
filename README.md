@@ -59,7 +59,8 @@ Select an appropriate plan. Read and accept the license agreement. You may leave
 
 Go to this [link](https://cloud.ibm.com/kubernetes/catalog/create?platformType=openshift) to create an instance of OpenShift cluster.
 
-Make a note of the `Ingress Subdomain URL`:
+Make a note of the `Ingress Subdomain URL` as shown.
+
 ![ingress](images/ingress_subdomain.png)
 
 ### 3. Configure Security Verify
