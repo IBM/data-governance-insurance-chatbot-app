@@ -107,7 +107,7 @@ For the action just created, click `Endpoints` on the left side navigation menu.
 Login to IBM Cloud. On the dashboard, click on the hamburger menu and click `Resource List`. Click on the Watson Assistant instance that you created earlier. Then click on `Launch Watson Assistant` button to launch Watson Assistant dashboard.
 
 - In the Watson Assistant home page, click `Create New +` option on the top panel.
-- Provide a name of your choice, say `InsuranceBot`
+- Provide a name of your choice, say `InsuranceBot` and click `Create assistant`.
 - Navigate to `Assistant Settings` in the left panel towards down. Under the Dialog section, click on `Activate Dialog`. Now, Dialog will be visible as one of the options in the left panel.
 - Click on `Dialog > Options > Upload/Download` and provide a json file available at `<cloned repo>/sources/chatbot/dialog/`. Click `Upload`.
 - On the left navigation links click `Options > Webhooks` and in `URL` text field, enter the REST API endpoint as noted in step 4 and append it with .json.  It should look something like this
@@ -120,7 +120,7 @@ Login to IBM Cloud. On the dashboard, click on the hamburger menu and click `Res
 - The following changes were made for this code pattern:
 	- Under `Home Screen` tab, toggle a button to set it `off`.
 	- Click on `Save and Exit`.
-- Now, chatbot can be used using this preview option. 
+- Now, chatbot can be used in this preview window. 
 - Optional: If you wish to embed this chatbot onto your portal, go to `Preview > Customize web chat > Embed (tab)`. It shows a code snippet like:
 	```
 	<script>
