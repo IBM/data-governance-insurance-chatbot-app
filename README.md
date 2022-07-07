@@ -23,6 +23,7 @@
 ### 1. Clone the repository
 
 From a command terminal, run the below command to clone the repo:
+
 ```
 git clone https://github.com/IBM/data-governance-insurance-chatbot-app
 ```
@@ -44,7 +45,7 @@ Select an appropriate plan. Read and accept the license agreement. You may leave
 
 ![create_db2_credential](images/create_db2_credential.png)
 
-**Note the username, password, host and port of the DB2 instance. The will be needed for configuring ECommerce Portal Application, Watson Knowledge Catalog and Watson Query**
+**Note the username, password, host and port of the DB2 instance. The will be needed for configuring Insurance Portal Application, Watson Knowledge Catalog and Watson Query**
 
 ![note_credential](images/note_credential.png)
 
@@ -112,33 +113,35 @@ Login to IBM Cloud. On the dashboard, click on the hamburger menu and click `Res
 	```
 	https://eu-gb.functions.appdomain.cloud/api/v1/web/.../default/sample.json
 	```
- It will be auto-saved. Now the chatbot is ready to use.
+	Now the chatbot is ready to use.
 - On the left panel, click the `Preview` button. 
 - Click on `Customize web chat` button presented in top-right corner. Here you can make changes as per your choice.
 - The following changes were made for this code pattern:
 	- Under `Home Screen` tab, toggle a button to set it `off`.
 	- Click on `Save and Exit`.
 - Now, chatbot can be used using this preview option. 
-- If you wish to embed this chatbot onto your portal, go to `Preview > Customize web chat > Embed (tab)`. It shows a code snippet like:
-```
-<script>
-  window.watsonAssistantChatOptions = {
-    integrationID: "cxxx0", // The ID of this integration.
-    region: "us-south", // The region your integration is hosted in.
-    serviceInstanceID: "fexxxa", // The ID of your service instance.
-    onLoad: function(instance) { instance.render(); }
-  };
-  setTimeout(function(){
-    const t=document.createElement('script');
-    t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
-    document.head.appendChild(t);
-  });
-</script>
-```
+- Optional: If you wish to embed this chatbot onto your portal, go to `Preview > Customize web chat > Embed (tab)`. It shows a code snippet like:
+	```
+	<script>
+	  window.watsonAssistantChatOptions = {
+	    integrationID: "cxxx0", // The ID of this integration.
+	    region: "us-south", // The region your integration is hosted in.
+	    serviceInstanceID: "fexxxa", // The ID of your service instance.
+	    onLoad: function(instance) { instance.render(); }
+	  };
+	  setTimeout(function(){
+	    const t=document.createElement('script');
+	    t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+	    document.head.appendChild(t);
+	  });
+	</script>
+	```
 
-Copy this code and paste on the homepage of the portal application. The chatbot will be integrated with your portal.
+	Copy this code and paste on the homepage of the portal application. The chatbot will be integrated with your portal.
 
 Note that this code pattern uses the preview option to ease the process.
+
+### 6. Deploy the application
 
 
 ## Summary
