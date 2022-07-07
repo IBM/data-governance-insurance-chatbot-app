@@ -104,20 +104,42 @@ For the action just created, click `Endpoints` on the left side navigation menu.
 
 Login to IBM Cloud. On the dashboard, click on the hamburger menu and click `Resource List`. Click on the Watson Assistant instance that you created earlier. Then click on `Launch Watson Assistant` button to launch Watson Assistant dashboard.
 
-- In the Watson Assistant home page, click `skills` option on the left menu options.
-> If you do not see skills icon, then the Watson assistant view could be for the new experience UI. For this code pattern, we will use the classic view and hence switch to classic view by navigating to `manage` (user icon on top right corner) and clicking `Switch to classic experience`.
-- Click `Create skill` button, then click `Dialog skill` tile. Click `Next`.
-- Select `Upload skill` tab. Drag and drop or browse to select the file in <cloned repo>/sources/chatbot/dialog/bot-dialog.json. Click `Upload`.
-- On the left navigation links click `Options`->`Webhooks` on the left hand navigation.
-- In `URL` text field, enter the REST API endpoint as noted in step 5 and append it with .json. It should look something like this
+- In the Watson Assistant home page, click `Create New +` option on the top panel.
+- Provide a name of your choice, say `InsuranceBot`
+- Navigate to `Assistant Settings` in the left panel towards down. Under the Dialog section, click on `Activate Dialog`. Now, Dialog will be visible as one of the options in the left panel.
+- Click on `Dialog > Options > Upload/Download` and provide a json file available at `<cloned repo>/sources/chatbot/dialog/`. Click `Upload`.
+- On the left navigation links click `Options > Webhooks` and in `URL` text field, enter the REST API endpoint as noted in step 4 and append it with .json.  It should look something like this
 	```
 	https://eu-gb.functions.appdomain.cloud/api/v1/web/.../default/sample.json
 	```
-- Click `Assistants` icon on the top left corner of Watson Assistant screen
-- Click `Create assistant`.
-- Give a name for your assistant, optionally enter a description and click `Create assistant`.
-- On the just created Assistant screen, click the `Preview` button. Make a note of `integrationID`, `serviceInstanceID` and `region`from the link provided under the section `Share this link`. These will be used in next step.
-- Close the window using the `x` button placed just below the user icon on the top right corner.
+ It will be auto-saved. Now the chatbot is ready to use.
+- On the left panel, click the `Preview` button. 
+- Click on `Customize web chat` button presented in top-right corner. Here you can make changes as per your choice.
+- The following changes were made for this code pattern:
+	- Under `Home Screen` tab, toggle a button to set it `off`.
+	- Click on `Save and Exit`.
+- Now, chatbot can be used using this preview option. 
+- If you wish to embed this chatbot onto your portal, go to `Preview > Customize web chat > Embed (tab)`. It shows a code snippet like:
+```
+<script>
+  window.watsonAssistantChatOptions = {
+    integrationID: "cxxx0", // The ID of this integration.
+    region: "us-south", // The region your integration is hosted in.
+    serviceInstanceID: "fexxxa", // The ID of your service instance.
+    onLoad: function(instance) { instance.render(); }
+  };
+  setTimeout(function(){
+    const t=document.createElement('script');
+    t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+    document.head.appendChild(t);
+  });
+</script>
+```
+
+Copy this code and paste on the homepage of the portal application. The chatbot will be integrated with your portal.
+
+Note that this code pattern uses the preview option to ease the process.
+
 
 ## Summary
 
