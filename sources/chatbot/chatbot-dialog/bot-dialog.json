@@ -1,0 +1,1708 @@
+{
+  "name": "Test Bot-dialog",
+  "type": "dialog",
+  "valid": true,
+  "counts": {
+    "intents": 9,
+    "entities": 4,
+    "dialog_nodes": 55
+  },
+  "status": "Available",
+  "created": "2022-07-07T11:38:24.091Z",
+  "updated": "2022-07-07T11:38:24.091Z",
+  "language": "en",
+  "skill_id": "4a348985-18be-4a35-87b1-b1dcdefd967b",
+  "snapshot": "1",
+  "workspace": {
+    "created": "2022-07-07T11:38:24.091Z",
+    "intents": [
+      {
+        "intent": "surrender_policy",
+        "created": "2022-07-07T11:38:27.221Z",
+        "updated": "2022-07-07T11:38:27.221Z",
+        "examples": [
+          {
+            "text": "cancel policy",
+            "created": "2022-07-07T11:38:27.221Z",
+            "updated": "2022-07-07T11:38:27.221Z"
+          },
+          {
+            "text": "surrender my policy",
+            "created": "2022-07-07T11:38:27.221Z",
+            "updated": "2022-07-07T11:38:27.221Z"
+          },
+          {
+            "text": "surrender my insurance",
+            "created": "2022-07-07T11:38:27.221Z",
+            "updated": "2022-07-07T11:38:27.221Z"
+          },
+          {
+            "text": "giveup policy",
+            "created": "2022-07-07T11:38:27.221Z",
+            "updated": "2022-07-07T11:38:27.221Z"
+          }
+        ],
+        "description": ""
+      },
+      {
+        "intent": "new_user",
+        "created": "2022-07-07T11:38:27.221Z",
+        "updated": "2022-07-07T11:38:27.221Z",
+        "examples": [
+          {
+            "text": "new user",
+            "created": "2022-07-07T11:38:27.221Z",
+            "updated": "2022-07-07T11:38:27.221Z"
+          },
+          {
+            "text": "new_user",
+            "created": "2022-07-07T11:38:27.221Z",
+            "updated": "2022-07-07T11:38:27.221Z"
+          }
+        ],
+        "description": ""
+      },
+      {
+        "intent": "buy_policy",
+        "created": "2022-07-07T11:38:27.221Z",
+        "updated": "2022-07-07T11:38:27.221Z",
+        "examples": [
+          {
+            "text": "buy",
+            "created": "2022-07-07T11:38:27.221Z",
+            "updated": "2022-07-07T11:38:27.221Z"
+          },
+          {
+            "text": "take policy",
+            "created": "2022-07-07T11:38:27.221Z",
+            "updated": "2022-07-07T11:38:27.221Z"
+          },
+          {
+            "text": "buy insurance policy",
+            "created": "2022-07-07T11:38:27.221Z",
+            "updated": "2022-07-07T11:38:27.221Z"
+          },
+          {
+            "text": "buy insurance",
+            "created": "2022-07-07T11:38:27.221Z",
+            "updated": "2022-07-07T11:38:27.221Z"
+          },
+          {
+            "text": "explore insurance policies",
+            "created": "2022-07-07T11:38:27.221Z",
+            "updated": "2022-07-07T11:38:27.221Z"
+          }
+        ],
+        "description": ""
+      },
+      {
+        "intent": "view_active_policies",
+        "created": "2022-07-07T11:38:27.221Z",
+        "updated": "2022-07-07T11:38:27.221Z",
+        "examples": [
+          {
+            "text": "view policy",
+            "created": "2022-07-07T11:38:27.221Z",
+            "updated": "2022-07-07T11:38:27.221Z"
+          },
+          {
+            "text": "show my policy",
+            "created": "2022-07-07T11:38:27.221Z",
+            "updated": "2022-07-07T11:38:27.221Z"
+          },
+          {
+            "text": "show policies",
+            "created": "2022-07-07T11:38:27.221Z",
+            "updated": "2022-07-07T11:38:27.221Z"
+          },
+          {
+            "text": "active policies",
+            "created": "2022-07-07T11:38:27.221Z",
+            "updated": "2022-07-07T11:38:27.221Z"
+          },
+          {
+            "text": "view active policies",
+            "created": "2022-07-07T11:38:27.221Z",
+            "updated": "2022-07-07T11:38:27.221Z"
+          }
+        ],
+        "description": ""
+      },
+      {
+        "intent": "policies_history",
+        "created": "2022-07-07T11:38:27.221Z",
+        "updated": "2022-07-07T11:38:27.221Z",
+        "examples": [
+          {
+            "text": "view all policies",
+            "created": "2022-07-07T11:38:27.221Z",
+            "updated": "2022-07-07T11:38:27.221Z"
+          },
+          {
+            "text": "previous orders",
+            "created": "2022-07-07T11:38:27.221Z",
+            "updated": "2022-07-07T11:38:27.221Z"
+          },
+          {
+            "text": "history",
+            "created": "2022-07-07T11:38:27.221Z",
+            "updated": "2022-07-07T11:38:27.221Z"
+          },
+          {
+            "text": "old orders",
+            "created": "2022-07-07T11:38:27.221Z",
+            "updated": "2022-07-07T11:38:27.221Z"
+          },
+          {
+            "text": "order history",
+            "created": "2022-07-07T11:38:27.221Z",
+            "updated": "2022-07-07T11:38:27.221Z"
+          },
+          {
+            "text": "View order history",
+            "created": "2022-07-07T11:38:27.221Z",
+            "updated": "2022-07-07T11:38:27.221Z"
+          },
+          {
+            "text": "policies history",
+            "created": "2022-07-07T11:38:27.221Z",
+            "updated": "2022-07-07T11:38:27.221Z"
+          }
+        ],
+        "description": ""
+      },
+      {
+        "intent": "thanks",
+        "created": "2022-07-07T11:38:27.221Z",
+        "updated": "2022-07-07T11:38:27.221Z",
+        "examples": [
+          {
+            "text": "bye",
+            "created": "2022-07-07T11:38:27.221Z",
+            "updated": "2022-07-07T11:38:27.221Z"
+          },
+          {
+            "text": "nothing",
+            "created": "2022-07-07T11:38:27.221Z",
+            "updated": "2022-07-07T11:38:27.221Z"
+          },
+          {
+            "text": "no",
+            "created": "2022-07-07T11:38:27.221Z",
+            "updated": "2022-07-07T11:38:27.221Z"
+          },
+          {
+            "text": "thank you",
+            "created": "2022-07-07T11:38:27.221Z",
+            "updated": "2022-07-07T11:38:27.221Z"
+          },
+          {
+            "text": "thanks",
+            "created": "2022-07-07T11:38:27.221Z",
+            "updated": "2022-07-07T11:38:27.221Z"
+          },
+          {
+            "text": "done",
+            "created": "2022-07-07T11:38:27.221Z",
+            "updated": "2022-07-07T11:38:27.221Z"
+          }
+        ],
+        "description": ""
+      },
+      {
+        "intent": "existing_user",
+        "created": "2022-07-07T11:38:27.221Z",
+        "updated": "2022-07-07T11:38:27.221Z",
+        "examples": [
+          {
+            "text": "registered",
+            "created": "2022-07-07T11:38:27.221Z",
+            "updated": "2022-07-07T11:38:27.221Z"
+          },
+          {
+            "text": "existing_user",
+            "created": "2022-07-07T11:38:27.221Z",
+            "updated": "2022-07-07T11:38:27.221Z"
+          },
+          {
+            "text": "existing user",
+            "created": "2022-07-07T11:38:27.221Z",
+            "updated": "2022-07-07T11:38:27.221Z"
+          },
+          {
+            "text": "registration done",
+            "created": "2022-07-07T11:38:27.221Z",
+            "updated": "2022-07-07T11:38:27.221Z"
+          }
+        ],
+        "description": ""
+      },
+      {
+        "intent": "yes",
+        "created": "2022-07-07T11:38:27.221Z",
+        "updated": "2022-07-07T11:38:27.221Z",
+        "examples": [
+          {
+            "text": "yeah",
+            "created": "2022-07-07T11:38:27.221Z",
+            "updated": "2022-07-07T11:38:27.221Z"
+          },
+          {
+            "text": "sure",
+            "created": "2022-07-07T11:38:27.221Z",
+            "updated": "2022-07-07T11:38:27.221Z"
+          },
+          {
+            "text": "yes",
+            "created": "2022-07-07T11:38:27.221Z",
+            "updated": "2022-07-07T11:38:27.221Z"
+          }
+        ],
+        "description": ""
+      },
+      {
+        "intent": "greeting",
+        "created": "2022-07-07T11:38:27.221Z",
+        "updated": "2022-07-07T11:38:27.221Z",
+        "examples": [
+          {
+            "text": "hello",
+            "created": "2022-07-07T11:38:27.221Z",
+            "updated": "2022-07-07T11:38:27.221Z"
+          },
+          {
+            "text": "helllo",
+            "created": "2022-07-07T11:38:27.221Z",
+            "updated": "2022-07-07T11:38:27.221Z"
+          },
+          {
+            "text": "ok",
+            "created": "2022-07-07T11:38:27.221Z",
+            "updated": "2022-07-07T11:38:27.221Z"
+          },
+          {
+            "text": "hi",
+            "created": "2022-07-07T11:38:27.221Z",
+            "updated": "2022-07-07T11:38:27.221Z"
+          }
+        ],
+        "description": ""
+      }
+    ],
+    "updated": "2022-07-07T11:38:24.091Z",
+    "entities": [
+      {
+        "entity": "policy_type",
+        "values": [
+          {
+            "type": "synonyms",
+            "value": "Vehicle",
+            "created": "2022-07-07T11:38:27.221Z",
+            "updated": "2022-07-07T11:38:27.221Z",
+            "synonyms": [
+              "vehicle"
+            ]
+          },
+          {
+            "type": "synonyms",
+            "value": "home",
+            "created": "2022-07-07T11:38:27.221Z",
+            "updated": "2022-07-07T11:38:27.221Z",
+            "synonyms": [
+              "Home"
+            ]
+          }
+        ],
+        "created": "2022-07-07T11:38:27.221Z",
+        "updated": "2022-07-07T11:38:27.221Z",
+        "fuzzy_match": true
+      },
+      {
+        "entity": "frequency",
+        "values": [
+          {
+            "type": "synonyms",
+            "value": "Monthly",
+            "created": "2022-07-07T11:38:27.221Z",
+            "updated": "2022-07-07T11:38:27.221Z",
+            "synonyms": [
+              "monthly"
+            ]
+          },
+          {
+            "type": "synonyms",
+            "value": "Quarterly",
+            "created": "2022-07-07T11:38:27.221Z",
+            "updated": "2022-07-07T11:38:27.221Z",
+            "synonyms": [
+              "quarterly"
+            ]
+          },
+          {
+            "type": "synonyms",
+            "value": "Yearly",
+            "created": "2022-07-07T11:38:27.221Z",
+            "updated": "2022-07-07T11:38:27.221Z",
+            "synonyms": [
+              "yearly"
+            ]
+          }
+        ],
+        "created": "2022-07-07T11:38:27.221Z",
+        "updated": "2022-07-07T11:38:27.221Z",
+        "fuzzy_match": true
+      },
+      {
+        "entity": "emailID",
+        "values": [
+          {
+            "type": "patterns",
+            "value": "abcd@email.com",
+            "created": "2022-07-07T11:38:27.221Z",
+            "updated": "2022-07-07T11:38:27.221Z",
+            "patterns": [
+              "[A-Za-z].com"
+            ]
+          }
+        ],
+        "created": "2022-07-07T11:38:27.221Z",
+        "updated": "2022-07-07T11:38:27.221Z",
+        "fuzzy_match": true
+      },
+      {
+        "entity": "sys-number",
+        "values": [],
+        "created": "2022-07-07T11:38:27.221Z",
+        "updated": "2022-07-07T11:38:27.221Z",
+        "fuzzy_match": true
+      }
+    ],
+    "language": "en",
+    "metadata": {
+      "skill": {
+        "counts": {
+          "intents": 9,
+          "entities": 4,
+          "dialog_nodes": 55
+        }
+      },
+      "api_version": {
+        "major_version": "v2",
+        "minor_version": "2018-11-08"
+      }
+    },
+    "webhooks": [
+      {
+        "url": "",
+        "name": "main_webhook",
+        "headers": []
+      }
+    ],
+    "dialog_nodes": [
+      {
+        "type": "response_condition",
+        "output": {
+          "text": {
+            "values": [
+              "The email ID provided is not registered."
+            ],
+            "selection_policy": "sequential"
+          }
+        },
+        "parent": "node_9_1650369096988",
+        "created": "2022-07-07T11:38:27.221Z",
+        "updated": "2022-07-07T11:38:27.221Z",
+        "next_step": {
+          "behavior": "jump_to",
+          "selector": "body",
+          "dialog_node": "node_10_1656490687201"
+        },
+        "conditions": "$webhook_result_4.result == 0",
+        "dialog_node": "response_8_1650370039136",
+        "previous_sibling": "response_1_1650370037138"
+      },
+      {
+        "type": "response_condition",
+        "output": {
+          "text": {
+            "values": [
+              "Something went wrong. Please reach out to customer support."
+            ],
+            "selection_policy": "sequential"
+          }
+        },
+        "parent": "node_9_1650369096988",
+        "created": "2022-07-07T11:38:27.221Z",
+        "updated": "2022-07-07T11:38:27.221Z",
+        "conditions": "anything_else",
+        "dialog_node": "response_1_1650370040028",
+        "previous_sibling": "response_8_1650370039136"
+      },
+      {
+        "type": "response_condition",
+        "output": {
+          "generic": [
+            {
+              "values": [
+                {
+                  "text": "Thank you. A code has been sent to your email to verify. Please provide the 6-digit code that starts after 1234-"
+                }
+              ],
+              "response_type": "text",
+              "selection_policy": "sequential"
+            }
+          ]
+        },
+        "parent": "node_9_1650369096988",
+        "context": {
+          "emailID": "<? input.text ?>",
+          "access_token": "$webhook_result_4.access_token",
+          "otp_txn_id_1": "$webhook_result_4.otp_txn_id"
+        },
+        "created": "2022-07-07T11:38:27.221Z",
+        "updated": "2022-07-07T11:38:27.221Z",
+        "next_step": {
+          "behavior": "jump_to",
+          "selector": "user_input",
+          "dialog_node": "node_3_1656577637845"
+        },
+        "conditions": "$webhook_result_4.result == 1",
+        "dialog_node": "response_1_1650370037138"
+      },
+      {
+        "type": "frame",
+        "title": "Surrender Policy",
+        "output": {
+          "generic": []
+        },
+        "parent": "node_8_1650430675320",
+        "created": "2022-07-07T11:38:27.221Z",
+        "updated": "2022-07-07T11:38:27.221Z",
+        "next_step": {
+          "behavior": "jump_to",
+          "selector": "body",
+          "dialog_node": "node_6_1656930545528"
+        },
+        "conditions": "#surrender_policy",
+        "dialog_node": "node_6_1656911374609",
+        "previous_sibling": "node_1_1656584459553"
+      },
+      {
+        "type": "standard",
+        "title": "View Active Policies",
+        "parent": "node_8_1650430675320",
+        "actions": [
+          {
+            "name": "main_webhook",
+            "type": "webhook",
+            "parameters": {
+              "emailID": "$emailID",
+              "access_token": "$access_token",
+              "request_type": "view_active_policies"
+            },
+            "result_variable": "webhook_result_3"
+          }
+        ],
+        "created": "2022-07-07T11:38:27.221Z",
+        "updated": "2022-07-07T11:38:27.221Z",
+        "metadata": {
+          "_customization": {
+            "mcr": true
+          }
+        },
+        "next_step": {
+          "behavior": "jump_to",
+          "selector": "body",
+          "dialog_node": "node_8_1650430675320"
+        },
+        "conditions": "#view_active_policies",
+        "dialog_node": "node_7_1650430893999",
+        "previous_sibling": "node_4_1650430866291"
+      },
+      {
+        "type": "frame",
+        "title": "Buy policy",
+        "output": {
+          "generic": [
+            {
+              "values": [
+                {
+                  "text": "Thank you for providing the required information. "
+                }
+              ],
+              "response_type": "text",
+              "selection_policy": "sequential"
+            }
+          ]
+        },
+        "parent": "node_8_1650430675320",
+        "created": "2022-07-07T11:38:27.221Z",
+        "updated": "2022-07-07T11:38:27.221Z",
+        "metadata": {
+          "_customization": {
+            "mcr": false
+          }
+        },
+        "next_step": {
+          "behavior": "jump_to",
+          "selector": "body",
+          "dialog_node": "node_5_1657002117939"
+        },
+        "conditions": "#buy_policy",
+        "dialog_node": "node_1_1656584459553",
+        "previous_sibling": "node_7_1650430893999"
+      },
+      {
+        "type": "standard",
+        "title": "View All Policies",
+        "parent": "node_8_1650430675320",
+        "actions": [
+          {
+            "name": "main_webhook",
+            "type": "webhook",
+            "parameters": {
+              "emailID": "$emailID",
+              "access_token": "$access_token",
+              "request_type": "policies_history"
+            },
+            "result_variable": "webhook_result_2"
+          }
+        ],
+        "created": "2022-07-07T11:38:27.221Z",
+        "updated": "2022-07-07T11:38:27.221Z",
+        "metadata": {
+          "_customization": {
+            "mcr": true
+          }
+        },
+        "next_step": {
+          "behavior": "jump_to",
+          "selector": "body",
+          "dialog_node": "node_8_1650430675320"
+        },
+        "conditions": "#policies_history",
+        "dialog_node": "node_4_1650430866291"
+      },
+      {
+        "type": "standard",
+        "title": "Invalid Email ID",
+        "output": {
+          "generic": [
+            {
+              "values": [
+                {
+                  "text": "Invalid Email ID."
+                }
+              ],
+              "response_type": "text",
+              "selection_policy": "sequential"
+            }
+          ]
+        },
+        "parent": "node_7_1656490747049",
+        "created": "2022-07-07T11:38:27.221Z",
+        "updated": "2022-07-07T11:38:27.221Z",
+        "next_step": {
+          "behavior": "jump_to",
+          "selector": "body",
+          "dialog_node": "node_7_1656490747049"
+        },
+        "conditions": "true",
+        "dialog_node": "node_6_1656492146496",
+        "previous_sibling": "node_9_1650369096988"
+      },
+      {
+        "type": "standard",
+        "title": "Email ID Validation",
+        "parent": "node_7_1656490747049",
+        "actions": [
+          {
+            "name": "main_webhook",
+            "type": "webhook",
+            "parameters": {
+              "emailID": "<?input.text?>",
+              "request_type": "verify_email"
+            },
+            "result_variable": "webhook_result_4"
+          }
+        ],
+        "created": "2022-07-07T11:38:27.221Z",
+        "updated": "2022-07-07T11:38:27.221Z",
+        "metadata": {
+          "_customization": {
+            "mcr": true
+          }
+        },
+        "next_step": {
+          "behavior": "skip_user_input"
+        },
+        "conditions": "@emailID",
+        "dialog_node": "node_9_1650369096988"
+      },
+      {
+        "type": "response_condition",
+        "output": {
+          "text": {
+            "values": [
+              "Somethign went wrong, please try again."
+            ],
+            "selection_policy": "sequential"
+          }
+        },
+        "parent": "node_10_1656490687201",
+        "created": "2022-07-07T11:38:27.221Z",
+        "updated": "2022-07-07T11:38:27.221Z",
+        "conditions": "anything_else",
+        "dialog_node": "response_2_1657008467981",
+        "previous_sibling": "response_5_1657008467323"
+      },
+      {
+        "type": "response_condition",
+        "output": {
+          "text": {
+            "values": [
+              "Kindly register yourself using the link - $webhook_result_10.registrationLink"
+            ],
+            "selection_policy": "sequential"
+          }
+        },
+        "parent": "node_10_1656490687201",
+        "created": "2022-07-07T11:38:27.221Z",
+        "updated": "2022-07-07T11:38:27.221Z",
+        "conditions": "$webhook_result_10",
+        "dialog_node": "response_5_1657008467323"
+      },
+      {
+        "type": "event_handler",
+        "output": {
+          "generic": [
+            {
+              "values": [
+                {
+                  "text": "How much insurance coverage you are looking for?"
+                }
+              ],
+              "response_type": "text",
+              "selection_policy": "sequential"
+            }
+          ]
+        },
+        "parent": "slot_10_1657001814149",
+        "created": "2022-07-07T11:38:27.221Z",
+        "updated": "2022-07-07T11:38:27.221Z",
+        "event_name": "focus",
+        "dialog_node": "handler_6_1657001814156",
+        "previous_sibling": "handler_3_1657001814156"
+      },
+      {
+        "type": "event_handler",
+        "output": {},
+        "parent": "slot_10_1657001814149",
+        "context": {
+          "insurance_cover": "@sys-number"
+        },
+        "created": "2022-07-07T11:38:27.221Z",
+        "updated": "2022-07-07T11:38:27.221Z",
+        "conditions": "@sys-number",
+        "event_name": "input",
+        "dialog_node": "handler_3_1657001814156"
+      },
+      {
+        "type": "response_condition",
+        "output": {
+          "text": {
+            "values": [
+              "Something went wrong, please try again."
+            ],
+            "selection_policy": "sequential"
+          }
+        },
+        "parent": "node_6_1656930545528",
+        "created": "2022-07-07T11:38:27.221Z",
+        "updated": "2022-07-07T11:38:27.221Z",
+        "next_step": {
+          "behavior": "jump_to",
+          "selector": "body",
+          "dialog_node": "node_8_1650430675320"
+        },
+        "conditions": "anything_else",
+        "dialog_node": "response_7_1656932993343",
+        "previous_sibling": "response_8_1656932991164"
+      },
+      {
+        "type": "response_condition",
+        "output": {
+          "generic": [
+            {
+              "values": [
+                {
+                  "text": "A code has been sent to your email to verify. Please provide the 6-digit code that starts after 1234-"
+                }
+              ],
+              "response_type": "text",
+              "selection_policy": "sequential"
+            }
+          ]
+        },
+        "parent": "node_6_1656930545528",
+        "context": {
+          "otp_txn_id_2": "$webhook_result_6.otp_txn_id"
+        },
+        "created": "2022-07-07T11:38:27.221Z",
+        "updated": "2022-07-07T11:38:27.221Z",
+        "conditions": "$webhook_result_6.result ==1",
+        "dialog_node": "response_8_1656932991164",
+        "previous_sibling": "node_3_1656933158756"
+      },
+      {
+        "type": "standard",
+        "title": "Verify OTP",
+        "parent": "node_6_1656930545528",
+        "actions": [
+          {
+            "name": "main_webhook",
+            "type": "webhook",
+            "parameters": {
+              "otp": "<?input.text?>",
+              "emailID": "$emailID",
+              "otp_txn_id": "$otp_txn_id_2",
+              "access_token": "$access_token",
+              "request_type": "verify_otp"
+            },
+            "result_variable": "webhook_result_7"
+          }
+        ],
+        "created": "2022-07-07T11:38:27.221Z",
+        "updated": "2022-07-07T11:38:27.221Z",
+        "metadata": {
+          "_customization": {
+            "mcr": true
+          }
+        },
+        "conditions": "@sys-number",
+        "dialog_node": "node_3_1656933158756"
+      },
+      {
+        "type": "slot",
+        "parent": "node_6_1656911374609",
+        "created": "2022-07-07T11:38:27.221Z",
+        "updated": "2022-07-07T11:38:27.221Z",
+        "variable": "policyID",
+        "dialog_node": "slot_2_1656911444063",
+        "previous_sibling": "node_6_1656930545528"
+      },
+      {
+        "type": "standard",
+        "title": "Resend OTP",
+        "parent": "node_6_1656911374609",
+        "actions": [
+          {
+            "name": "main_webhook",
+            "type": "webhook",
+            "parameters": {
+              "emailID": "$emailID",
+              "access_token": "$access_token",
+              "request_type": "email_otp"
+            },
+            "result_variable": "webhook_result_6"
+          }
+        ],
+        "created": "2022-07-07T11:38:27.221Z",
+        "updated": "2022-07-07T11:38:27.221Z",
+        "metadata": {
+          "_customization": {
+            "mcr": true
+          }
+        },
+        "conditions": "true",
+        "dialog_node": "node_6_1656930545528"
+      },
+      {
+        "type": "slot",
+        "parent": "node_1_1656584459553",
+        "created": "2022-07-07T11:38:27.221Z",
+        "updated": "2022-07-07T11:38:27.221Z",
+        "variable": "frequency",
+        "dialog_node": "slot_9_1657001862414",
+        "previous_sibling": "slot_10_1657001814149"
+      },
+      {
+        "type": "slot",
+        "parent": "node_1_1656584459553",
+        "created": "2022-07-07T11:38:27.221Z",
+        "updated": "2022-07-07T11:38:27.221Z",
+        "variable": "insurance_cover",
+        "dialog_node": "slot_10_1657001814149",
+        "previous_sibling": "slot_8_1657001628171"
+      },
+      {
+        "type": "slot",
+        "parent": "node_1_1656584459553",
+        "created": "2022-07-07T11:38:27.221Z",
+        "updated": "2022-07-07T11:38:27.221Z",
+        "variable": "policy_type",
+        "dialog_node": "slot_8_1657001628171",
+        "previous_sibling": "node_5_1657002117939"
+      },
+      {
+        "type": "standard",
+        "title": "Request to Buy Policy",
+        "parent": "node_1_1656584459553",
+        "actions": [
+          {
+            "name": "main_webhook",
+            "type": "webhook",
+            "parameters": {
+              "emailID": "$emailID",
+              "frequency": "$frequency",
+              "policy_type": "$policy_type",
+              "access_token": "$access_token",
+              "request_type": "buy_policy",
+              "insurance_cover": "$insurance_cover"
+            },
+            "result_variable": "webhook_result_9"
+          }
+        ],
+        "created": "2022-07-07T11:38:27.221Z",
+        "updated": "2022-07-07T11:38:27.221Z",
+        "metadata": {
+          "_customization": {
+            "mcr": true
+          }
+        },
+        "conditions": "true",
+        "dialog_node": "node_5_1657002117939"
+      },
+      {
+        "type": "event_handler",
+        "output": {
+          "generic": [
+            {
+              "values": [
+                {
+                  "text": "Kindly provide policy ID"
+                }
+              ],
+              "response_type": "text",
+              "selection_policy": "sequential"
+            }
+          ]
+        },
+        "parent": "slot_2_1656911444063",
+        "created": "2022-07-07T11:38:27.221Z",
+        "updated": "2022-07-07T11:38:27.221Z",
+        "event_name": "focus",
+        "dialog_node": "handler_7_1656911444078",
+        "previous_sibling": "handler_6_1656911444078"
+      },
+      {
+        "type": "event_handler",
+        "output": {},
+        "parent": "slot_2_1656911444063",
+        "context": {
+          "policyID": "@sys-number"
+        },
+        "created": "2022-07-07T11:38:27.221Z",
+        "updated": "2022-07-07T11:38:27.221Z",
+        "conditions": "@sys-number",
+        "event_name": "input",
+        "dialog_node": "handler_6_1656911444078"
+      },
+      {
+        "type": "standard",
+        "title": "Thanks for Buying Policy",
+        "output": {
+          "generic": [
+            {
+              "values": [
+                {
+                  "text": "Congratulations! Your policy is created successfully. You can check status of policy under 'view policies'."
+                }
+              ],
+              "response_type": "text",
+              "selection_policy": "sequential"
+            }
+          ]
+        },
+        "parent": "node_9_1657003196442",
+        "context": {
+          "frequency": null,
+          "policy_type": null,
+          "insurance_cover": null
+        },
+        "created": "2022-07-07T11:38:27.221Z",
+        "updated": "2022-07-07T11:38:27.221Z",
+        "next_step": {
+          "behavior": "jump_to",
+          "selector": "body",
+          "dialog_node": "node_8_1650430675320"
+        },
+        "conditions": "true",
+        "dialog_node": "node_1_1657003341818"
+      },
+      {
+        "type": "event_handler",
+        "output": {
+          "generic": [
+            {
+              "values": [
+                {
+                  "text": "How would you like to pay premium - Monthly / Quarterly / Yearly ?"
+                }
+              ],
+              "response_type": "text",
+              "selection_policy": "sequential"
+            }
+          ]
+        },
+        "parent": "slot_9_1657001862414",
+        "created": "2022-07-07T11:38:27.221Z",
+        "updated": "2022-07-07T11:38:27.221Z",
+        "event_name": "focus",
+        "dialog_node": "handler_6_1657001862417",
+        "previous_sibling": "handler_9_1657001862417"
+      },
+      {
+        "type": "event_handler",
+        "output": {},
+        "parent": "slot_9_1657001862414",
+        "context": {
+          "frequency": "@frequency"
+        },
+        "created": "2022-07-07T11:38:27.221Z",
+        "updated": "2022-07-07T11:38:27.221Z",
+        "conditions": "@frequency",
+        "event_name": "input",
+        "dialog_node": "handler_9_1657001862417"
+      },
+      {
+        "type": "response_condition",
+        "output": {
+          "generic": [
+            {
+              "values": [
+                {
+                  "text": "Code verification failed. $webhook_result_7.message"
+                }
+              ],
+              "response_type": "text",
+              "selection_policy": "sequential"
+            }
+          ]
+        },
+        "parent": "node_3_1656933158756",
+        "created": "2022-07-07T11:38:27.221Z",
+        "updated": "2022-07-07T11:38:27.221Z",
+        "next_step": {
+          "behavior": "jump_to",
+          "selector": "body",
+          "dialog_node": "node_6_1656930545528"
+        },
+        "conditions": "$webhook_result_7.verify_status == 0",
+        "dialog_node": "response_8_1656988983335",
+        "previous_sibling": "response_10_1656988707932"
+      },
+      {
+        "type": "response_condition",
+        "output": {
+          "text": {
+            "values": [
+              "$webhook_result_7.message"
+            ],
+            "selection_policy": "sequential"
+          }
+        },
+        "parent": "node_3_1656933158756",
+        "created": "2022-07-07T11:38:27.221Z",
+        "updated": "2022-07-07T11:38:27.221Z",
+        "next_step": {
+          "behavior": "jump_to",
+          "selector": "body",
+          "dialog_node": "node_7_1656490747049"
+        },
+        "conditions": "$webhook_result_7.verified_user == 0",
+        "dialog_node": "response_3_1656988705914",
+        "previous_sibling": "node_9_1656930645021"
+      },
+      {
+        "type": "response_condition",
+        "output": {
+          "generic": [
+            {
+              "values": [
+                {
+                  "text": "$webhook_result_7.message"
+                }
+              ],
+              "response_type": "text",
+              "selection_policy": "sequential"
+            }
+          ]
+        },
+        "parent": "node_3_1656933158756",
+        "created": "2022-07-07T11:38:27.221Z",
+        "updated": "2022-07-07T11:38:27.221Z",
+        "next_step": {
+          "behavior": "jump_to",
+          "selector": "body",
+          "dialog_node": "node_9_1656930645021"
+        },
+        "conditions": "$webhook_result_7.verify_status == 1",
+        "dialog_node": "response_10_1656988707932",
+        "previous_sibling": "response_3_1656988705914"
+      },
+      {
+        "type": "standard",
+        "title": "Request to Surrender",
+        "parent": "node_3_1656933158756",
+        "actions": [
+          {
+            "name": "main_webhook",
+            "type": "webhook",
+            "parameters": {
+              "emailID": "$emailID",
+              "policyID": "$policyID",
+              "access_token": "$access_token",
+              "request_type": "surrender_policy"
+            },
+            "result_variable": "webhook_result_8"
+          }
+        ],
+        "created": "2022-07-07T11:38:27.221Z",
+        "updated": "2022-07-07T11:38:27.221Z",
+        "metadata": {
+          "_customization": {
+            "mcr": true
+          }
+        },
+        "next_step": {
+          "behavior": "jump_to",
+          "selector": "body",
+          "dialog_node": "node_8_1650430675320"
+        },
+        "conditions": "true",
+        "dialog_node": "node_9_1656930645021"
+      },
+      {
+        "type": "response_condition",
+        "output": {
+          "text": {
+            "values": [
+              "Code verification failed. $webhook_result_5.message"
+            ],
+            "selection_policy": "sequential"
+          }
+        },
+        "parent": "node_3_1656577637845",
+        "created": "2022-07-07T11:38:27.221Z",
+        "updated": "2022-07-07T11:38:27.221Z",
+        "next_step": {
+          "behavior": "jump_to",
+          "selector": "body",
+          "dialog_node": "node_9_1650369096988"
+        },
+        "conditions": "$webhook_result_5.verify_status == 0",
+        "dialog_node": "response_3_1656577683014",
+        "previous_sibling": "response_8_1656578034687"
+      },
+      {
+        "type": "response_condition",
+        "output": {
+          "generic": [
+            {
+              "values": [
+                {
+                  "text": "$webhook_result_5.message"
+                }
+              ],
+              "response_type": "text",
+              "selection_policy": "sequential"
+            }
+          ]
+        },
+        "parent": "node_3_1656577637845",
+        "created": "2022-07-07T11:38:27.221Z",
+        "updated": "2022-07-07T11:38:27.221Z",
+        "next_step": {
+          "behavior": "jump_to",
+          "selector": "body",
+          "dialog_node": "node_8_1650430675320"
+        },
+        "conditions": "$webhook_result_5.verify_status == 1",
+        "dialog_node": "response_8_1656578034687",
+        "previous_sibling": "response_8_1656577681015"
+      },
+      {
+        "type": "response_condition",
+        "output": {
+          "text": {
+            "values": [
+              "$webhook_result_5.message"
+            ],
+            "selection_policy": "sequential"
+          }
+        },
+        "parent": "node_3_1656577637845",
+        "created": "2022-07-07T11:38:27.221Z",
+        "updated": "2022-07-07T11:38:27.221Z",
+        "next_step": {
+          "behavior": "jump_to",
+          "selector": "body",
+          "dialog_node": "node_7_1656490747049"
+        },
+        "conditions": "$webhook_result_5.verified_user == 0",
+        "dialog_node": "response_8_1656577681015"
+      },
+      {
+        "type": "event_handler",
+        "output": {
+          "generic": [
+            {
+              "values": [
+                {
+                  "text": "Which type of Policy you would like to buy - Home / Vehicle ?"
+                }
+              ],
+              "response_type": "text",
+              "selection_policy": "sequential"
+            }
+          ]
+        },
+        "parent": "slot_8_1657001628171",
+        "created": "2022-07-07T11:38:27.221Z",
+        "updated": "2022-07-07T11:38:27.221Z",
+        "event_name": "focus",
+        "dialog_node": "handler_2_1657001628188",
+        "previous_sibling": "handler_1_1657001628188"
+      },
+      {
+        "type": "event_handler",
+        "output": {},
+        "parent": "slot_8_1657001628171",
+        "context": {
+          "policy_type": "@policy_type"
+        },
+        "created": "2022-07-07T11:38:27.221Z",
+        "updated": "2022-07-07T11:38:27.221Z",
+        "conditions": "@policy_type",
+        "event_name": "input",
+        "dialog_node": "handler_1_1657001628188"
+      },
+      {
+        "type": "response_condition",
+        "output": {
+          "text": {
+            "values": [
+              "Something went wrong, please try again."
+            ],
+            "selection_policy": "sequential"
+          }
+        },
+        "parent": "node_9_1656930645021",
+        "created": "2022-07-07T11:38:27.221Z",
+        "updated": "2022-07-07T11:38:27.221Z",
+        "conditions": "anything_else",
+        "dialog_node": "response_10_1656989591619",
+        "previous_sibling": "response_2_1656989589672"
+      },
+      {
+        "type": "response_condition",
+        "output": {
+          "text": {
+            "values": [
+              "$webhook_result_8.Response"
+            ],
+            "selection_policy": "sequential"
+          }
+        },
+        "parent": "node_9_1656930645021",
+        "context": {
+          "policyID": null
+        },
+        "created": "2022-07-07T11:38:27.221Z",
+        "updated": "2022-07-07T11:38:27.221Z",
+        "conditions": "$webhook_result_8",
+        "dialog_node": "response_2_1656989589672"
+      },
+      {
+        "type": "response_condition",
+        "parent": "node_4_1650430866291",
+        "created": "2022-07-07T11:38:27.221Z",
+        "updated": "2022-07-07T11:38:27.221Z",
+        "conditions": "anything_else",
+        "dialog_node": "response_10_1650431084796",
+        "previous_sibling": "response_3_1650431082444"
+      },
+      {
+        "type": "response_condition",
+        "output": {
+          "generic": [
+            {
+              "values": [
+                {
+                  "text": "$webhook_result_2.Response"
+                }
+              ],
+              "response_type": "text",
+              "selection_policy": "sequential"
+            }
+          ]
+        },
+        "parent": "node_4_1650430866291",
+        "created": "2022-07-07T11:38:27.221Z",
+        "updated": "2022-07-07T11:38:27.221Z",
+        "next_step": {
+          "behavior": "jump_to",
+          "selector": "body",
+          "dialog_node": "node_8_1650430675320"
+        },
+        "conditions": "$webhook_result_2",
+        "dialog_node": "response_3_1650431082444",
+        "previous_sibling": "response_6_1657044058197"
+      },
+      {
+        "type": "response_condition",
+        "output": {
+          "generic": [
+            {
+              "values": [
+                {
+                  "text": "$webhook_result_2.message"
+                }
+              ],
+              "response_type": "text",
+              "selection_policy": "sequential"
+            }
+          ]
+        },
+        "parent": "node_4_1650430866291",
+        "created": "2022-07-07T11:38:27.221Z",
+        "updated": "2022-07-07T11:38:27.221Z",
+        "next_step": {
+          "behavior": "jump_to",
+          "selector": "body",
+          "dialog_node": "node_7_1656490747049"
+        },
+        "conditions": "$webhook_result_2.verified_user==0",
+        "dialog_node": "response_6_1657044058197"
+      },
+      {
+        "type": "response_condition",
+        "parent": "node_7_1650430893999",
+        "created": "2022-07-07T11:38:27.221Z",
+        "updated": "2022-07-07T11:38:27.221Z",
+        "conditions": "anything_else",
+        "dialog_node": "response_1_1650432504758",
+        "previous_sibling": "response_3_1657043891117"
+      },
+      {
+        "type": "response_condition",
+        "output": {
+          "generic": [
+            {
+              "values": [
+                {
+                  "text": "$webhook_result_3.Response"
+                }
+              ],
+              "response_type": "text",
+              "selection_policy": "sequential"
+            }
+          ]
+        },
+        "parent": "node_7_1650430893999",
+        "created": "2022-07-07T11:38:27.221Z",
+        "updated": "2022-07-07T11:38:27.221Z",
+        "next_step": {
+          "behavior": "jump_to",
+          "selector": "body",
+          "dialog_node": "node_8_1650430675320"
+        },
+        "conditions": "$webhook_result_3",
+        "dialog_node": "response_3_1657043891117",
+        "previous_sibling": "response_5_1650432502151"
+      },
+      {
+        "type": "response_condition",
+        "output": {
+          "generic": [
+            {
+              "values": [
+                {
+                  "text": "$webhook_result_3.message"
+                }
+              ],
+              "response_type": "text",
+              "selection_policy": "sequential"
+            }
+          ]
+        },
+        "parent": "node_7_1650430893999",
+        "created": "2022-07-07T11:38:27.221Z",
+        "updated": "2022-07-07T11:38:27.221Z",
+        "next_step": {
+          "behavior": "jump_to",
+          "selector": "body",
+          "dialog_node": "node_7_1656490747049"
+        },
+        "conditions": "$webhook_result_3.verified_user==0",
+        "dialog_node": "response_5_1650432502151"
+      },
+      {
+        "type": "response_condition",
+        "output": {
+          "text": {
+            "values": [
+              "Your premium amount will be $webhook_result_9.premium. Please do the payment using the link to complete the purchase - $webhook_result_9.paymentLink"
+            ],
+            "selection_policy": "sequential"
+          }
+        },
+        "parent": "node_5_1657002117939",
+        "created": "2022-07-07T11:38:27.221Z",
+        "updated": "2022-07-07T11:38:27.221Z",
+        "next_step": {
+          "behavior": "jump_to",
+          "selector": "body",
+          "dialog_node": "node_9_1657003196442"
+        },
+        "conditions": "$webhook_result_9",
+        "dialog_node": "response_2_1657002184140",
+        "previous_sibling": "response_5_1657045892328"
+      },
+      {
+        "type": "response_condition",
+        "output": {
+          "generic": [
+            {
+              "values": [
+                {
+                  "text": "$webhook_result_9.message"
+                }
+              ],
+              "response_type": "text",
+              "selection_policy": "sequential"
+            }
+          ]
+        },
+        "parent": "node_5_1657002117939",
+        "created": "2022-07-07T11:38:27.221Z",
+        "updated": "2022-07-07T11:38:27.221Z",
+        "next_step": {
+          "behavior": "jump_to",
+          "selector": "body",
+          "dialog_node": "node_7_1656490747049"
+        },
+        "conditions": "$webhook_result_9.verified_user==0",
+        "dialog_node": "response_5_1657045892328",
+        "previous_sibling": "node_9_1657003196442"
+      },
+      {
+        "type": "response_condition",
+        "output": {
+          "text": {
+            "values": [
+              "Something went wrong, please try again."
+            ],
+            "selection_policy": "sequential"
+          }
+        },
+        "parent": "node_5_1657002117939",
+        "created": "2022-07-07T11:38:27.221Z",
+        "updated": "2022-07-07T11:38:27.221Z",
+        "conditions": "anything_else",
+        "dialog_node": "response_3_1657002186260",
+        "previous_sibling": "response_2_1657002184140"
+      },
+      {
+        "type": "standard",
+        "title": "Payment Confirmation",
+        "output": {
+          "generic": [
+            {
+              "title": "Please confirm if you have done the payment",
+              "options": [
+                {
+                  "label": "yes",
+                  "value": {
+                    "input": {
+                      "text": "yes"
+                    }
+                  }
+                }
+              ],
+              "response_type": "option"
+            }
+          ]
+        },
+        "parent": "node_5_1657002117939",
+        "created": "2022-07-07T11:38:27.221Z",
+        "updated": "2022-07-07T11:38:27.221Z",
+        "conditions": "true",
+        "dialog_node": "node_9_1657003196442"
+      },
+      {
+        "type": "standard",
+        "title": "Anything else",
+        "output": {
+          "generic": [
+            {
+              "values": [
+                {
+                  "text": "I didn't understand. You can try rephrasing."
+                },
+                {
+                  "text": "Can you reword your statement? I'm not understanding."
+                },
+                {
+                  "text": "I didn't get your meaning."
+                }
+              ],
+              "response_type": "text",
+              "selection_policy": "sequential"
+            }
+          ]
+        },
+        "created": "2022-07-07T11:38:27.221Z",
+        "updated": "2022-07-07T11:38:27.221Z",
+        "conditions": "anything_else",
+        "digress_in": "does_not_return",
+        "dialog_node": "Anything else",
+        "previous_sibling": "node_6_1656932405442",
+        "disambiguation_opt_out": true
+      },
+      {
+        "type": "standard",
+        "title": "Verify Code",
+        "actions": [
+          {
+            "name": "main_webhook",
+            "type": "webhook",
+            "parameters": {
+              "otp": "<?input.text?>",
+              "emailID": "$emailID",
+              "otp_txn_id": "$otp_txn_id_1",
+              "access_token": "$access_token",
+              "request_type": "verify_otp"
+            },
+            "result_variable": "webhook_result_5"
+          }
+        ],
+        "created": "2022-07-07T11:38:27.221Z",
+        "updated": "2022-07-07T11:38:27.221Z",
+        "metadata": {
+          "_customization": {
+            "mcr": true
+          }
+        },
+        "next_step": {
+          "behavior": "jump_to",
+          "selector": "body",
+          "dialog_node": "node_8_1650430675320"
+        },
+        "conditions": "@sys-number",
+        "dialog_node": "node_3_1656577637845",
+        "previous_sibling": "node_7_1656490747049"
+      },
+      {
+        "type": "standard",
+        "title": "Existing User",
+        "output": {
+          "generic": [
+            {
+              "values": [
+                {
+                  "text": "Please provide your registered Email ID."
+                }
+              ],
+              "response_type": "text",
+              "selection_policy": "sequential"
+            }
+          ]
+        },
+        "created": "2022-07-07T11:38:27.221Z",
+        "updated": "2022-07-07T11:38:27.221Z",
+        "conditions": "#existing_user",
+        "digress_in": "does_not_return",
+        "dialog_node": "node_7_1656490747049",
+        "previous_sibling": "node_10_1656490687201"
+      },
+      {
+        "type": "standard",
+        "title": "Thanks",
+        "output": {
+          "generic": [
+            {
+              "values": [
+                {
+                  "text": "Thanks for choosing us. Hope you had a great experience!"
+                }
+              ],
+              "response_type": "text",
+              "selection_policy": "sequential"
+            }
+          ]
+        },
+        "created": "2022-07-07T11:38:27.221Z",
+        "updated": "2022-07-07T11:38:27.221Z",
+        "conditions": "#thanks",
+        "digress_in": "does_not_return",
+        "dialog_node": "node_6_1656932405442",
+        "previous_sibling": "node_3_1656577637845"
+      },
+      {
+        "type": "standard",
+        "title": "New User",
+        "actions": [
+          {
+            "name": "main_webhook",
+            "type": "webhook",
+            "parameters": {
+              "request_type": "registration"
+            },
+            "result_variable": "webhook_result_10"
+          }
+        ],
+        "created": "2022-07-07T11:38:27.221Z",
+        "updated": "2022-07-07T11:38:27.221Z",
+        "metadata": {
+          "_customization": {
+            "mcr": true
+          }
+        },
+        "conditions": "#new_user",
+        "digress_in": "does_not_return",
+        "dialog_node": "node_10_1656490687201",
+        "previous_sibling": "Welcome"
+      },
+      {
+        "type": "standard",
+        "title": "Customer action",
+        "output": {
+          "generic": [
+            {
+              "title": "What would you like to do?",
+              "options": [
+                {
+                  "label": "Buy policy",
+                  "value": {
+                    "input": {
+                      "text": "buy_policy"
+                    }
+                  }
+                },
+                {
+                  "label": "View active policies",
+                  "value": {
+                    "input": {
+                      "text": "view_active_policies"
+                    }
+                  }
+                },
+                {
+                  "label": "Surrender policy",
+                  "value": {
+                    "input": {
+                      "text": "surrender_policy"
+                    }
+                  }
+                },
+                {
+                  "label": "View all policies",
+                  "value": {
+                    "input": {
+                      "text": "policies_history"
+                    }
+                  }
+                },
+                {
+                  "label": "No Thanks",
+                  "value": {
+                    "input": {
+                      "text": "thanks"
+                    }
+                  }
+                }
+              ],
+              "response_type": "option"
+            }
+          ]
+        },
+        "created": "2022-07-07T11:38:27.221Z",
+        "updated": "2022-07-07T11:38:27.221Z",
+        "conditions": "true",
+        "digress_in": "does_not_return",
+        "dialog_node": "node_8_1650430675320",
+        "previous_sibling": "Anything else"
+      },
+      {
+        "type": "standard",
+        "title": "Welcome",
+        "output": {
+          "generic": [
+            {
+              "values": [
+                {
+                  "text": "Welcome to the Example Insurance Chat Service."
+                }
+              ],
+              "response_type": "text",
+              "selection_policy": "sequential"
+            },
+            {
+              "title": "Please select the appropriate option.",
+              "options": [
+                {
+                  "label": "New User",
+                  "value": {
+                    "input": {
+                      "text": "new user"
+                    }
+                  }
+                },
+                {
+                  "label": "Existing User",
+                  "value": {
+                    "input": {
+                      "text": "existing user"
+                    }
+                  }
+                }
+              ],
+              "response_type": "option"
+            }
+          ]
+        },
+        "context": {},
+        "created": "2022-07-07T11:38:27.221Z",
+        "updated": "2022-07-07T11:38:27.221Z",
+        "conditions": "welcome || #greeting",
+        "dialog_node": "Welcome"
+      }
+    ],
+    "counterexamples": [],
+    "system_settings": {
+      "disambiguation": {
+        "prompt": "Did you mean:",
+        "enabled": true,
+        "randomize": true,
+        "max_suggestions": 5,
+        "suggestion_text_policy": "title",
+        "none_of_the_above_prompt": "None of the above"
+      },
+      "human_agent_assist": {
+        "prompt": "Did you mean:"
+      },
+      "intent_classification": {
+        "training_backend_version": "v2"
+      },
+      "spelling_auto_correct": true
+    },
+    "learning_opt_out": false
+  },
+  "assistant_id": "a221a938-ba8a-4c7e-a9fa-53f972a52d3b",
+  "dialog_settings": {
+    "source_assistant": "175618f0-6034-43ec-9fa2-43b1b088b161"
+  },
+  "assistant_references": []
+}
