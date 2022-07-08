@@ -219,15 +219,15 @@ Select `Schemas` in the dropdown menu. Click on `New schema` with a name say `IN
 
 ![wq_create_schema](images/wq_create_schema.png)
 
-#### 8.4 Virtualize CUSTOMER and ORDERS tables
+#### 8.4 Virtualize POLICY_HOLDER and POLICIES tables
 
-Select `Schemas` in the dropdown menu. Select the `CUSTOMER` and `ORDER` tables. Add to Cart. Go to the cart, select `Virtualized data` option and click on `Virtualize` as shown.
+Select `Schemas` in the dropdown menu. Select the `POLICY_HOLDER` and `POLICIES` tables. Add to Cart. Go to the cart, select `Virtualized data` option and click on `Virtualize` as shown.
 
 ![wq_virtualize](images/wq_virtualize.png)
 
-#### 8.5 Create a CUSTOMER_ORDERS_VIEW
+#### 8.5 Create a POLICYHOLDER_POLICIES_VIEW
 
-Select `Virtualized data`  in the dropdown menu. Select `CUSTOMER` and `ORDERS` table. Click on `Join`. In the next page, create a joiin key from `CUST_ID` of `CUSTOMER` table to `CUST_ID` of `ORDERS` table.
+Select `Virtualized data`  in the dropdown menu. Select `POLICY_HOLDER` and `POLICIES` table. Click on `Join`. In the next page, create a join key from `CUST_ID` of `POLICY_HOLDER` table to `CUST_ID` of `POLICIES` table.
 
 ![wq_join](images/wq_join.png)
 
@@ -237,7 +237,7 @@ On the next page, select `Virtualized data` option. Click `Create View`.
 
 #### 8.6 Provide user access to `Data Collaborator`
 
-Select `Virtualized data`  in the dropdown menu. For the `CUSTOMER_ORDERS_VIEW` select `Manage Access`. On the access page, click on `Grant Access` and provide access to the `Data Collaborator` user.
+Select `Virtualized data`  in the dropdown menu. For the `POLICYHOLDER_POLICIES_VIEW` select `Manage Access`. On the access page, click on `Grant Access` and provide access to the `Data Collaborator` user.
 
 ![wq_view_access](images/wq_view_access.png)
 
@@ -251,7 +251,7 @@ Click `View All Catalogs` on the left hamburger menu. Click on the catalog that 
 
 ![view_catalog](images/view_catalog.png)
 
-Click on the `INSSCHEMA.CUSTOMER` data asset. Click on the `Asset` tab. 
+Click on the `INSSCHEMA.POLICY_HOLDER` data asset. Click on the `Asset` tab. 
 	
 Enter the connection details of Watson Query noted earlier.
 	
@@ -268,7 +268,7 @@ The data should now be visible on the `Asset` tab:
 	
 #### 9.1.1 Create a data profile
 	
-For each of the assets - `INSSCHEMA.CUSTOMER`,`INSSCHEMA.ORDERS` and `INSSCHEMA.CUSTOMER_ORDERS_VIEW`, go to the `Profile` tab and click `Create Profile`.
+For each of the assets - `INSSCHEMA.POLICY_HOLDER`,`INSSCHEMA.POLICIES` and `INSSCHEMA.POLICYHOLDER_POLICIES_VIEW`, go to the `Profile` tab and click `Create Profile`.
 
 ![wkc_customer_profile](images/wkc_customer_profile.png)
 	
@@ -308,7 +308,7 @@ Open the `Asset` tab for `ORDERS` table. Assign the data class `CC_NUM_CLASS` cr
 
 ![orders_assign](images/orders_assign.png)
 	
-Open the `Asset` tab for `CUSTOMER` table. Verify the data class assignment for mobile and email columns.
+Open the `Asset` tab for `POLICY_HOLDER` table. Verify the data class assignment for mobile and email columns.
 
 ![customer_assign](images/customer_assign.png)	
 	
@@ -325,11 +325,11 @@ Similarly, you can add rules for masking mobile, email and credit card expiry in
 
 #### 9.7 View of data for `Data Owner` and `Data Collaborator`
 
-Login to Watson Query with `Data Owner` credentials. `Preview` the `CUSTOMER_ORDERS_VIEW`.
+Login to Watson Query with `Data Owner` credentials. `Preview` the `POLICYHOLDER_POLICIES_VIEW`.
 
 ![owner_view](images/owner_view.png)	
 	
-Login to Watson Query with `Data Collaborator` credentials. `Preview` the `CUSTOMER_ORDERS_VIEW`.
+Login to Watson Query with `Data Collaborator` credentials. `Preview` the `POLICYHOLDER_POLICIES_VIEW`.
 
 ![owner_view](images/collab_view.png)
 
