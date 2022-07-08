@@ -197,6 +197,120 @@ Note that this code pattern uses the preview option to ease the process.
 
 ### 7. Deploy applications
 
+#### 7.1 Deploy Portal Service
+
+##### 7.1.1 Configure db.config
+
+In the cloned repo folder - go to `sources/portal-svc/src/main/resources`. Open `db.config`.
+
+Replace the {{host}} and {{port}} with the host and port you noted during Db2 credentials creation. Enter the userid, password and schema with the username, password and username(in uppercase). Save the file.
+> Note: the schema should be in uppercase of the username noted in Db2 credentials.
+```
+jdbcurl=jdbc:db2://{{host}}:{{port}}/bludb:sslConnection=true;
+userid=
+password=
+schema=
+```
+
+##### 7.1.2 Changes to verify.config
+In the cloned repo folder - go to `sources/portal-svc/src/main/resources`. Open `verify.config`.
+
+Make the below changes and save the file:
+- Replace {{tenant-id}} with the tenant id of Security Verify noted at the time of creation.
+- For `clientId` and `clientSecret` enter the Client ID and Client secret noted on the `Sign-on` tab of Security Verify.
+- For `apiClientId` and `apiClientSecret` enter the Client ID and Client secret noted on the `API Access` tab of Security Verify.
+
+```
+introspectionUrl=https://{{tenant-id}}.verify.ibm.com/v1.0/endpoint/default/introspect
+tokenUrl=https://{{tenant-id}}.verify.ibm.com/v1.0/endpoint/default/token
+userInfoUrl=https://{{tenant-id}}.verify.ibm.com/v1.0/endpoint/default/userinfo
+clientId=
+clientSecret=
+usersUrl=https://{{tenant-id}}.verify.ibm.com/v2.0/Users
+apiClientId=
+apiClientSecret=
+```
+
+##### 7.1.3 Deploy application to the OpenShift cluster
+On the terminal window, got to the repository folder that we cloned earlier. 
+Go to the directory - `sources/portal-svc/src/main/java/com/example/portalsvc/rest/`.
+Open the file `PortalSvcEndpoint.java`.
+
+Replace the placeholder `{{ingress-sub-domain}}` with the ingress sub domain of the OpenShift cluster you noted earlier. Save the file.
+```
+private static String ingressSubDomain = "portal-svc-governance.{{ingress-sub-domain}}/";
+```
+
+Now change directory to `/sources/portal-svc` in the cloned repo folder.
+Run the following commands to deploy `Portal Service`.
+```
+oc new-project governance
+mvn clean install
+oc new-app . --name=portal-svc --strategy=docker
+oc start-build portal-svc --from-dir=.
+oc logs -f bc/portal-svc
+oc expose svc/portal-svc
+```
+Ensure that the application is started successfully using the command `oc get pods`. Also make a note of the route using the command `oc get routes`. 
+
+#### 6.3 Configure Db2 database
+
+In this step, we will create two tables in the Db2 database - CUSTOMER and ORDERS table.
+
+Invoke the URL - http://ecomm-portal-chatbot.{{IngressSubdomainURL}}/portal/ecomm/setupdb
+
+>Note: Replace {{IngressSubdomainURL}} with `Ingress subdomain` of the OpenShift cluster.
+
+#### 7.2 Deploy Chatbot Service
+
+##### 7.2.1 Configure db.config
+
+In the cloned repo folder - go to `sources/chatbot-svc/src/main/resources`. Open `db.config`.
+
+Here, you need to enter the `Watson Query` credentials noted earlier.  For mode, specify `managed` if using the SaaS version of Cloud Pak for Data, and `self` if Cloud Pak for Data is deployed on self-managed OpenShift cluster.  Specify the `JDBC url` for the `Watson Query`. The JDBC url will have `apikey` embedded for `managed` mode. This `apikey` is what was generated on the collaborator IBM Cloud account.
+For a self-managed cluster, enter the user id and password of the collaborator user. Save the file.
+> Note: the schema should be in uppercase of the username noted in Db2 credentials.
+```
+jdbcurl=jdbc:db2://
+mode=managed
+userid=
+password=
+schema=INSSCHEMA
+```
+
+##### 7.2.2 Changes to verify.config
+In the cloned repo folder - go to `sources/chatbot-svc/src/main/resources`. Open `verify.config`.
+
+Make the below changes and save the file:
+- Replace {{tenant-id}} with the tenant id of Security Verify noted at the time of creation.
+- For `clientId` and `clientSecret` enter the Client ID and Client secret noted on the `Sign-on` tab of Security Verify.
+- For `apiClientId` and `apiClientSecret` enter the Client ID and Client secret noted on the `API Access` tab of Security Verify.
+
+```
+introspectionUrl=https://{{tenant-id}}.verify.ibm.com/v1.0/endpoint/default/introspect
+tokenUrl=https://{{tenant-id}}.verify.ibm.com/v1.0/endpoint/default/token
+userInfoUrl=https://{{tenant-id}}.verify.ibm.com/v1.0/endpoint/default/userinfo
+clientId=
+clientSecret=
+usersUrl=https://{{tenant-id}}.verify.ibm.com/v2.0/Users
+apiClientId=
+apiClientSecret=
+```
+
+##### 7.2.3 Deploy application to the OpenShift cluster
+On the terminal window, got to the repository folder that we cloned earlier. 
+Now change directory to `/sources/chatbot-svc` in the cloned repo folder.
+Run the following commands to deploy `Portal Service`.
+```
+oc new-project governance
+mvn clean install
+oc new-app . --name=chatbot-svc --strategy=docker
+oc start-build chatbot-svc --from-dir=.
+oc logs -f bc/chatbot-svc
+oc expose svc/chatbot-svc
+```
+Ensure that the application is started successfully using the command `oc get pods`. Also make a note of the route using the command `oc get routes`. 
+
 ### 8. Configure Watson Query
 
 Login to `Cloud Pak for Data` with `Data Owner` credentials. Go to the Watson Query console.
