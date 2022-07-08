@@ -56,11 +56,13 @@ Security Verify has been used to implement authentication for the Chatbot applic
 1. [Clone the repository](#1-clone-the-repository)
 2. [Create IBM Cloud Services](#2-create-ibm-cloud-services)
 3. [Configure Security Verify](#3-configure-security-verify)
-4. [Create Cloud Functions Action](#4-create-cloud-functions-action)
-5. [Setup Watson Assistant Chatbot](#5-setup-watson-assistant-chatbot)
-6. [Deploy Insurance Portal Application](#6-deploy-insurance-portal-application)
-7. [Configure Watson Query and Watson Knowloedge Studio]
-8. [Access the Application](#8-access-the-application)
+4. [Provide access for collaborators to Cloud Pak for Data](#4-provide-access-for-collaborators-to-cloud-pak-for-data)
+5. [Create Cloud Functions Action](#5-create-cloud-functions-action)
+6. [Setup Watson Assistant Chatbot](#6-setup-watson-assistant-chatbot)
+7. [Deploy Applications](#7-deploy-applications)
+8. [Configure Watson Query](#8-configure-watson-query)
+9. [Configure Watson Knowledge Studio](#9-configure-watson-knowledge-studio)
+10. [Access the Application](#10-access-the-application)
 
 ### 1. Clone the repository
 
@@ -112,7 +114,13 @@ Make a note of the `Ingress Subdomain URL`:
 
 Please follow the instructions [here](SECURITY_VERIFY_CONFIG.md) to configure Security Verify.
 
-### 4. Create Cloud Functions Action
+### 4. Provide access for collaborators to Cloud Pak for Data
+
+For fully managed service, click [here](CPDaaS_Access.md) and follow the steps.
+
+For self managed software, click [here](CPD_Access.md) and follow the steps.
+
+### 5. Create Cloud Functions Action
 
 Login to your IBM Cloud account. On the dashboard, click on the hamburger menu and navigate to `Functions` and click on `Actions`.
 
@@ -147,7 +155,7 @@ For the action just created, click `Endpoints` on the left side navigation menu.
 
 ![Webhook URL](images/action-url.png)
 
-### 5. Setup Watson Assistant Chatbot
+### 6. Setup Watson Assistant Chatbot
 
 Login to IBM Cloud. On the dashboard, click on the hamburger menu and click `Resource List`. Click on the Watson Assistant instance that you created earlier. Then click on `Launch Watson Assistant` button to launch Watson Assistant dashboard.
 
@@ -187,7 +195,146 @@ Login to IBM Cloud. On the dashboard, click on the hamburger menu and click `Res
 
 Note that this code pattern uses the preview option to ease the process.
 
-### 6. Deploy the application
+### 7. Deploy applications
+
+### 8. Configure Watson Query
+
+Login to `Cloud Pak for Data` with `Data Owner` credentials. Go to the Watson Query console.
+
+#### 8.1 Enforce data policies
+
+Select `Service settings` in the dropdown menu. Click on `Governance` tab. Enable `Enforce policies within Data Virtualization` and `Enforce publishing to a governed catalog`.
+
+![wq_enforce_policies](images/wq_enforce_policies.png)
+
+#### 8.2 Add Db2 connection 
+
+Select `Data Sources` in the dropdown menu. Click on `Add Connection`.  Select `Db2 on Cloud` if the instance is on IBM Cloud. Enter the `Db2` credentials that you noted earlier, and create the connection.
+
+![wq_db2_conn](images/wq_db2_conn.png)
+
+#### 8.3 Create schema
+
+Select `Schemas` in the dropdown menu. Click on `New schema` with a name say `INSSCHEMA`.
+
+![wq_create_schema](images/wq_create_schema.png)
+
+#### 8.4 Virtualize CUSTOMER and ORDERS tables
+
+Select `Schemas` in the dropdown menu. Select the `CUSTOMER` and `ORDER` tables. Add to Cart. Go to the cart, select `Virtualized data` option and click on `Virtualize` as shown.
+
+![wq_virtualize](images/wq_virtualize.png)
+
+#### 8.5 Create a CUSTOMER_ORDERS_VIEW
+
+Select `Virtualized data`  in the dropdown menu. Select `CUSTOMER` and `ORDERS` table. Click on `Join`. In the next page, create a joiin key from `CUST_ID` of `CUSTOMER` table to `CUST_ID` of `ORDERS` table.
+
+![wq_join](images/wq_join.png)
+
+On the next page, select `Virtualized data` option. Click `Create View`.
+
+![wq_create_view](images/wq_create_view.png)
+
+#### 8.6 Provide user access to `Data Collaborator`
+
+Select `Virtualized data`  in the dropdown menu. For the `CUSTOMER_ORDERS_VIEW` select `Manage Access`. On the access page, click on `Grant Access` and provide access to the `Data Collaborator` user.
+
+![wq_view_access](images/wq_view_access.png)
+
+### 9. Configure Watson Knowledge Studio
+
+Login to `Cloud Pak for Data` with `Data Owner` credentials. Go to the Watson Query console.
+
+#### 9.1 View the catalog and data assets
+	
+Click `View All Catalogs` on the left hamburger menu. Click on the catalog that you created earlier. All the Watson Query Data Assets should appear as shown.
+
+![view_catalog](images/view_catalog.png)
+
+Click on the `INSSCHEMA.CUSTOMER` data asset. Click on the `Asset` tab. 
+	
+Enter the connection details of Watson Query noted earlier.
+	
+If it is a fully managed Cloud Pak for Data service:
+- On the IBM Cloud Dashboard, go to `Manage` and select `Access (IAM`). Create an IBM Cloud API Key. Note the API key.
+- On the `Asset` tab, select API Key as the mode of authentication.
+- Enter the API key noted in the earlier step, and click `Connect`.
+
+If it is a self managed software for Cloud Pak for Data:
+- Enter the `Data Owner` credentials for Cloud Pak for Data.
+
+The data should now be visible on the `Asset` tab:
+![wkc_customer](images/wkc_customer.png)
+	
+#### 9.1.1 Create a data profile
+	
+For each of the assets - `INSSCHEMA.CUSTOMER`,`INSSCHEMA.ORDERS` and `INSSCHEMA.CUSTOMER_ORDERS_VIEW`, go to the `Profile` tab and click `Create Profile`.
+
+![wkc_customer_profile](images/wkc_customer_profile.png)
+	
+#### 9.2 Create a category
+
+Click `View All Catalogs` on the left hamburger menu. Click on `Add category` and select `New category`.
+
+![create_category](images/create_category.png)
+	
+Create a category for personal financial information. Enter a `name` and click `Create`.
+	
+#### 9.3 Create a data class
+
+Click `Data classes` on the left hamburger menu. Click on `Add data class` and select `New data class`.	
+
+Enter details as shown and click `Create`.
+
+![create_dclass](images/create_dclass.png)	
+
+This will be saved as `Draft`. Click `Publish` to publish the data class.
+
+![publish_dclass](images/publish_dclass.png)
+	
+#### 9.4 Create a business term
+
+Click `Business terms` on the left hamburger menu. Click on `Add business term` and select `New business term`.	
+
+Enter details as shown and click `Create`.
+
+![create_bterm](images/create_bterm.png)
+	
+This will be saved as `Draft`. Click `Publish` to publish the business term.
+
+#### 9.5 Assign data class to the columns
+
+Open the `Asset` tab for `ORDERS` table. Assign the data class `CC_NUM_CLASS` created earlier to the credit card information columns.
+
+![orders_assign](images/orders_assign.png)
+	
+Open the `Asset` tab for `CUSTOMER` table. Verify the data class assignment for mobile and email columns.
+
+![customer_assign](images/customer_assign.png)	
+	
+#### 9.6 Create a data protection rule
+
+Click `Rules` on the left hamburger menu. Click on `Add rule` and select `New rule`.	
+Next select `Data protection rule`. Configure the rule as shown. This rule will mask the credit card data for collaborators. Click on `Create`. 
+
+![create_rule](images/create_rule.png)
+
+Similarly, you can add rules for masking mobile, email and credit card expiry information.
+
+![rules](images/rules.png)	
+
+#### 9.7 View of data for `Data Owner` and `Data Collaborator`
+
+Login to Watson Query with `Data Owner` credentials. `Preview` the `CUSTOMER_ORDERS_VIEW`.
+
+![owner_view](images/owner_view.png)	
+	
+Login to Watson Query with `Data Collaborator` credentials. `Preview` the `CUSTOMER_ORDERS_VIEW`.
+
+![owner_view](images/collab_view.png)
+
+In the next section, let us access the application and see the data privacy policies enforced for the chatbot.
+
 
 
 ## Summary
