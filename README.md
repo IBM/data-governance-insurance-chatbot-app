@@ -1,4 +1,29 @@
+# Work in progress
 # Digital decoupling and data sharing between Insurance portal and Insurance chatbot
+
+Data Security & Privacy related laws and regulations have become more stringent and at the same time businesses are expected to open for ecosystem partners. This makes data governance very critical to avoid litigation, loss of competitive position and trust. 
+
+A collaborating application from within the enterprise or an ecosystem partner could require access to a data source for both read and write operations. A read operation must hence mask sensitive data  such as name, location, contact details, date of birth, credit card number, financial details and more. A data governance framework plays a critical role to enforce security and privacy at the same time be an enabler for business to achieve their strategy. 
+
+Let us consider the following scenario for this code pattern. There is an insurance portal application where a customer can register, sign in, purchase a policy, view policy details and surrender a policy. Currently all this functionality is available on a web portal. Chatbots are becoming increasingly common these days. It is a very convenient, and also a preferred way for customers to interact with businesses. It was decided to build a chatbot application that will co-exist with the web portal with the following features:
+- Register as a user 
+- Sign in to the chatbot
+- Buy an insurance policy
+- View all policy details
+- Surrender a policy
+
+The web portal application owns the data and is responsible for enforcing the data policies. Now, it can be seen here that the Chatbot needs to having the following capabilities:
+- Read access to data from the web portal application with sesitive data masked.
+- Write access to data with data policies enforced.
+- Authenticate users of the chatbot.
+
+In this code pattern, you will learn how to:
+- Set up data assets for governance in the Watson Knowledge Catalog
+- Create data categories, classes, business terms and data protection rules for the data assets
+- Create virtualized view of the data on Watson Query with data policies enforced
+- Create a chatbot aapplication using Watson Assistant that invokes APIs exposed by the Web portal application for writing data to the data source, and consumes the read-only data with sensitive information masked from Watson Query.
+
+Security Verify has been used to implement authentication for the Chatbot application.
 
 ## Flow
 
