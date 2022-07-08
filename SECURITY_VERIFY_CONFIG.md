@@ -19,7 +19,7 @@
   * Read second-factor authentication enrollment for all users
   * Read users and groups
 Click Next.
-- Use other default vaules and provide the name. Click `Create API Client`.
+- Use other default vaules and provide the name say TestConfig. Click `Create API Client`.
 - The credentials will now be generated.
 
 **Get the credentials**
