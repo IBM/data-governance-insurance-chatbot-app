@@ -29,6 +29,21 @@ Security Verify has been used to implement authentication for the Chatbot applic
 
 ## Flow
 
+1. Create tables in Db2. The Db2 connection and the tables(as `Data Asset`) are added to the `Watson Knowledge Catalog(WKC)`. The data policies are configured for the data assets in `WKC`.
+2. Db2 is added as a data source in Watson Query. The needed tables are virtualized and a `View` is created by joining the virtualized tables. 
+3. The Watson Query virtualized tables and view are published to `WKC`. The data policies are configured for the data assets in `WKC`.
+4. User accesses the chatbot. User is provided the option to `Register as a user` or `Login`.
+5. In case of a new user, User is provided a web url for registration. In case of existing user, the User is authenticated using a one-time passcode sent to the user's email address.
+6. User accesses the registration link hosted on the `Portal Svc`. User fills up the registration form with details.
+7. A new user is created in Security Verify, and a record is added in Db2 table with other customer details.
+8. The user after a successful authentication of one-time passcode can perform the following operations that involves a write operation to the data source - `Buy a Policy` or `Surrender a Policy`. The `Portal Svc` APIs for the operation is invoked. The `Portal Svc` validates the request with `Security Verify` using `Token Introspection`.
+9. The `Portal Svc` then writes to the Db2 database with the data policies applied for the invoked operations.
+10. The response from the `Portal Svc` is returned to `Watson Assistant`, `Chatbot Svc` and eventually to the end user accessing the chatbot interface.
+11. The user requests to `View Active policies` or `View All policies`.  Since this a read operation, the request goes to `Chatbot Svc`. The `Chatbot Svc` validates the request with `Security Verify` using `Token Introspection`. 
+12. The `Chatbot Svc` accesses `Watson Query` to get the results. The data policies are applied to mask sensitive data in the results.
+13. All responses are sent back to the user on the chatbot interface.
+ 
+
 ## Pre-requisites
 
 * IBM Cloud account
