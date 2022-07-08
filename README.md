@@ -197,6 +197,120 @@ Note that this code pattern uses the preview option to ease the process.
 
 ### 7. Deploy applications
 
+#### 7.1 Deploy Portal Service
+
+##### 7.1.1 Configure db.config
+
+In the cloned repo folder - go to `sources/portal-svc/src/main/resources`. Open `db.config`.
+
+Replace the {{host}} and {{port}} with the host and port you noted during Db2 credentials creation. Enter the userid, password and schema with the username, password and username(in uppercase). Save the file.
+> Note: the schema should be in uppercase of the username noted in Db2 credentials.
+```
+jdbcurl=jdbc:db2://{{host}}:{{port}}/bludb:sslConnection=true;
+userid=
+password=
+schema=
+```
+
+##### 7.1.2 Changes to verify.config
+In the cloned repo folder - go to `sources/portal-svc/src/main/resources`. Open `verify.config`.
+
+Make the below changes and save the file:
+- Replace {{tenant-id}} with the tenant id of Security Verify noted at the time of creation.
+- For `clientId` and `clientSecret` enter the Client ID and Client secret noted on the `Sign-on` tab of Security Verify.
+- For `apiClientId` and `apiClientSecret` enter the Client ID and Client secret noted on the `API Access` tab of Security Verify.
+
+```
+introspectionUrl=https://{{tenant-id}}.verify.ibm.com/v1.0/endpoint/default/introspect
+tokenUrl=https://{{tenant-id}}.verify.ibm.com/v1.0/endpoint/default/token
+userInfoUrl=https://{{tenant-id}}.verify.ibm.com/v1.0/endpoint/default/userinfo
+clientId=
+clientSecret=
+usersUrl=https://{{tenant-id}}.verify.ibm.com/v2.0/Users
+apiClientId=
+apiClientSecret=
+```
+
+##### 7.1.3 Deploy application to the OpenShift cluster
+On the terminal window, got to the repository folder that we cloned earlier. 
+Go to the directory - `sources/portal-svc/src/main/java/com/example/portalsvc/rest/`.
+Open the file `PortalSvcEndpoint.java`.
+
+Replace the placeholder `{{ingress-sub-domain}}` with the ingress sub domain of the OpenShift cluster you noted earlier. Save the file.
+```
+private static String ingressSubDomain = "portal-svc-governance.{{ingress-sub-domain}}/";
+```
+
+Now change directory to `/sources/portal-svc` in the cloned repo folder.
+Run the following commands to deploy `Portal Service`.
+```
+oc new-project governance
+mvn clean install
+oc new-app . --name=portal-svc --strategy=docker
+oc start-build portal-svc --from-dir=.
+oc logs -f bc/portal-svc
+oc expose svc/portal-svc
+```
+Ensure that the application is started successfully using the command `oc get pods`. Also make a note of the route using the command `oc get routes`. 
+
+#### 6.3 Configure Db2 database
+
+In this step, we will create two tables in the Db2 database - CUSTOMER and ORDERS table.
+
+Invoke the URL - http://ecomm-portal-chatbot.{{IngressSubdomainURL}}/portal/ecomm/setupdb
+
+>Note: Replace {{IngressSubdomainURL}} with `Ingress subdomain` of the OpenShift cluster.
+
+#### 7.2 Deploy Chatbot Service
+
+##### 7.2.1 Configure db.config
+
+In the cloned repo folder - go to `sources/chatbot-svc/src/main/resources`. Open `db.config`.
+
+Here, you need to enter the `Watson Query` credentials noted earlier.  For mode, specify `managed` if using the SaaS version of Cloud Pak for Data, and `self` if Cloud Pak for Data is deployed on self-managed OpenShift cluster.  Specify the `JDBC url` for the `Watson Query`. The JDBC url will have `apikey` embedded for `managed` mode. This `apikey` is what was generated on the collaborator IBM Cloud account.
+For a self-managed cluster, enter the user id and password of the collaborator user. Save the file.
+> Note: the schema should be in uppercase of the username noted in Db2 credentials.
+```
+jdbcurl=jdbc:db2://
+mode=managed
+userid=
+password=
+schema=INSSCHEMA
+```
+
+##### 7.2.2 Changes to verify.config
+In the cloned repo folder - go to `sources/chatbot-svc/src/main/resources`. Open `verify.config`.
+
+Make the below changes and save the file:
+- Replace {{tenant-id}} with the tenant id of Security Verify noted at the time of creation.
+- For `clientId` and `clientSecret` enter the Client ID and Client secret noted on the `Sign-on` tab of Security Verify.
+- For `apiClientId` and `apiClientSecret` enter the Client ID and Client secret noted on the `API Access` tab of Security Verify.
+
+```
+introspectionUrl=https://{{tenant-id}}.verify.ibm.com/v1.0/endpoint/default/introspect
+tokenUrl=https://{{tenant-id}}.verify.ibm.com/v1.0/endpoint/default/token
+userInfoUrl=https://{{tenant-id}}.verify.ibm.com/v1.0/endpoint/default/userinfo
+clientId=
+clientSecret=
+usersUrl=https://{{tenant-id}}.verify.ibm.com/v2.0/Users
+apiClientId=
+apiClientSecret=
+```
+
+##### 7.2.3 Deploy application to the OpenShift cluster
+On the terminal window, got to the repository folder that we cloned earlier. 
+Now change directory to `/sources/chatbot-svc` in the cloned repo folder.
+Run the following commands to deploy `Portal Service`.
+```
+oc new-project governance
+mvn clean install
+oc new-app . --name=chatbot-svc --strategy=docker
+oc start-build chatbot-svc --from-dir=.
+oc logs -f bc/chatbot-svc
+oc expose svc/chatbot-svc
+```
+Ensure that the application is started successfully using the command `oc get pods`. Also make a note of the route using the command `oc get routes`. 
+
 ### 8. Configure Watson Query
 
 Login to `Cloud Pak for Data` with `Data Owner` credentials. Go to the Watson Query console.
@@ -219,15 +333,15 @@ Select `Schemas` in the dropdown menu. Click on `New schema` with a name say `IN
 
 ![wq_create_schema](images/wq_create_schema.png)
 
-#### 8.4 Virtualize CUSTOMER and ORDERS tables
+#### 8.4 Virtualize POLICY_HOLDER and POLICIES tables
 
-Select `Schemas` in the dropdown menu. Select the `CUSTOMER` and `ORDER` tables. Add to Cart. Go to the cart, select `Virtualized data` option and click on `Virtualize` as shown.
+Select `Schemas` in the dropdown menu. Select the `POLICY_HOLDER` and `POLICIES` tables. Add to Cart. Go to the cart, select `Virtualized data` option and click on `Virtualize` as shown.
 
 ![wq_virtualize](images/wq_virtualize.png)
 
-#### 8.5 Create a CUSTOMER_ORDERS_VIEW
+#### 8.5 Create a POLICYHOLDER_POLICIES_VIEW
 
-Select `Virtualized data`  in the dropdown menu. Select `CUSTOMER` and `ORDERS` table. Click on `Join`. In the next page, create a joiin key from `CUST_ID` of `CUSTOMER` table to `CUST_ID` of `ORDERS` table.
+Select `Virtualized data`  in the dropdown menu. Select `POLICY_HOLDER` and `POLICIES` table. Click on `Join`. In the next page, create a join key from `CUST_ID` of `POLICY_HOLDER` table to `CUST_ID` of `POLICIES` table.
 
 ![wq_join](images/wq_join.png)
 
@@ -237,7 +351,7 @@ On the next page, select `Virtualized data` option. Click `Create View`.
 
 #### 8.6 Provide user access to `Data Collaborator`
 
-Select `Virtualized data`  in the dropdown menu. For the `CUSTOMER_ORDERS_VIEW` select `Manage Access`. On the access page, click on `Grant Access` and provide access to the `Data Collaborator` user.
+Select `Virtualized data`  in the dropdown menu. For the `POLICYHOLDER_POLICIES_VIEW` select `Manage Access`. On the access page, click on `Grant Access` and provide access to the `Data Collaborator` user.
 
 ![wq_view_access](images/wq_view_access.png)
 
@@ -251,7 +365,7 @@ Click `View All Catalogs` on the left hamburger menu. Click on the catalog that 
 
 ![view_catalog](images/view_catalog.png)
 
-Click on the `INSSCHEMA.CUSTOMER` data asset. Click on the `Asset` tab. 
+Click on the `INSSCHEMA.POLICY_HOLDER` data asset. Click on the `Asset` tab. 
 	
 Enter the connection details of Watson Query noted earlier.
 	
@@ -268,7 +382,7 @@ The data should now be visible on the `Asset` tab:
 	
 #### 9.1.1 Create a data profile
 	
-For each of the assets - `INSSCHEMA.CUSTOMER`,`INSSCHEMA.ORDERS` and `INSSCHEMA.CUSTOMER_ORDERS_VIEW`, go to the `Profile` tab and click `Create Profile`.
+For each of the assets - `INSSCHEMA.POLICY_HOLDER`,`INSSCHEMA.POLICIES` and `INSSCHEMA.POLICYHOLDER_POLICIES_VIEW`, go to the `Profile` tab and click `Create Profile`.
 
 ![wkc_customer_profile](images/wkc_customer_profile.png)
 	
@@ -308,7 +422,7 @@ Open the `Asset` tab for `ORDERS` table. Assign the data class `CC_NUM_CLASS` cr
 
 ![orders_assign](images/orders_assign.png)
 	
-Open the `Asset` tab for `CUSTOMER` table. Verify the data class assignment for mobile and email columns.
+Open the `Asset` tab for `POLICY_HOLDER` table. Verify the data class assignment for mobile and email columns.
 
 ![customer_assign](images/customer_assign.png)	
 	
@@ -325,11 +439,11 @@ Similarly, you can add rules for masking mobile, email and credit card expiry in
 
 #### 9.7 View of data for `Data Owner` and `Data Collaborator`
 
-Login to Watson Query with `Data Owner` credentials. `Preview` the `CUSTOMER_ORDERS_VIEW`.
+Login to Watson Query with `Data Owner` credentials. `Preview` the `POLICYHOLDER_POLICIES_VIEW`.
 
 ![owner_view](images/owner_view.png)	
 	
-Login to Watson Query with `Data Collaborator` credentials. `Preview` the `CUSTOMER_ORDERS_VIEW`.
+Login to Watson Query with `Data Collaborator` credentials. `Preview` the `POLICYHOLDER_POLICIES_VIEW`.
 
 ![owner_view](images/collab_view.png)
 
