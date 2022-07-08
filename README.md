@@ -25,6 +25,8 @@ In this code pattern, you will learn how to:
 
 Security Verify has been used to implement authentication for the Chatbot application.
 
+![architecture](images/architecture.png)
+
 ## Flow
 
 ## Pre-requisites
