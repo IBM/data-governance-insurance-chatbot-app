@@ -71,38 +71,41 @@ git clone https://github.com/IBM/data-governance-insurance-chatbot-app
 ```
 ### 2. Create IBM Cloud Services
 
-#### 2.1 Sign up for IBM Security Verify
+#### 2.1 Create DB2, Watson Knowledge Catalog and Watson Query service instances on Cloud Pak for Data
+
+In the code pattern, we will be using Cloud Pak for Data.
+
+[Cloud Pak For Data](https://cloud.ibm.com/cloudpaks/data/overview) is available in two modes -
+- [Fully-managed service](https://cloud.ibm.com/cloudpaks/data/overview) 
+- [Self-managed software](https://cloud.ibm.com/catalog/content/ibm-cp-datacore-6825cc5d-dbf8-4ba2-ad98-690e6f221701-global)
+
+##### 2.1.1 For fully managed service, click [here](CPDaaS.md) and follow the steps.
+
+##### 2.1.2 For self managed software, click [here](CPD.md) and follow the steps.
+
+##### 2.1.3 Create a catalog in Watson Knowledge Studio for Insurance Portal Application
+
+Go to the Watson Knowledge Studio console. Select `View All Catalogs` on the hamburger menu on the top left.
+
+Click on `Create Catalog`.
+
+![click_create_catalog](images/click_create_catalog.png)
+
+Enter a name for the catalog (say `InsClCatalog`). Enter a description. Select `Enforce data policies`. Click `Create`.
+
+![create_catalog](images/create_catalog.png)
+
+#### 2.2 Sign up for IBM Security Verify
 
 Click [Security Verify](https://www.ibm.com/account/reg/signup?formid=urx-30041) to sign up for Security Verify. After you sign up for an account, the account URL (https://[tenant name].verify.ibm.com/ui/admin) and password is sent in an email.
 
-#### 2.2 Create IBM DB2 Service instance
+#### 2.3 Create an OpenShift cluster to deploy applications
 
-Login to IBM Cloud, in [IBM Cloud Catalog](https://cloud.ibm.com/catalog) search of DB2. Click on the Db2 tile.
-
-Select an appropriate plan. Read and accept the license agreement. You may leave the other options to their default values. Click on `Create` button. It will take a minute or so to provision an instance.
-
-**Make a note of service credentials**
-- Click the newly created db2 entry in [IBM Cloud Resource list](https://cloud.ibm.com/resources)
-- Click `Service credentials` on the left hand side navigation menu. If there are no credentials, then click on `New credential` button and create new credentials. 
-
-![create_db2_credential](images/create_db2_credential.png)
-
-**Note the username, password, host and port of the DB2 instance. The will be needed for configuring Insurance Portal Application, Watson Knowledge Catalog and Watson Query**
-
-![note_credential](images/note_credential.png)
-
-#### 2.3 Create Watson Assistant Service instance
-
-* Login to IBM Cloud, in [IBM Cloud Catalog](https://cloud.ibm.com/catalog) search of Assistant and create a Watson Assistant service by selecting the **Lite** plan and clicking on **Create**.
-
-* Click **Launch Watson Assistant** to launch console.
-
-#### 2.4 Create an instance of OpenShift cluster
+>Note: If you are using a Cloud Pak For Data as a self managed software, the same cluster can be used for application deployment.
 
 Go to this [link](https://cloud.ibm.com/kubernetes/catalog/create?platformType=openshift) to create an instance of OpenShift cluster.
 
-Make a note of the `Ingress Subdomain URL` as shown.
-
+Make a note of the `Ingress Subdomain URL`:
 ![ingress](images/ingress_subdomain.png)
 
 ### 3. Configure Security Verify
