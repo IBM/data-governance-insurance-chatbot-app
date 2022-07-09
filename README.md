@@ -5,7 +5,12 @@ Data Security & Privacy related laws and regulations have become more stringent 
 
 A collaborating application from within the enterprise or an ecosystem partner could require access to a data source for both read and write operations. A read operation must hence mask sensitive data  such as name, location, contact details, date of birth, credit card number, financial details and more. The write operation must ensure all the data policies are enforced. In such a scenario, a data governance framework plays a critical role to enforce data security and privacy at the same time be an enabler for business to achieve their strategy. 
 
-Let us consider the following scenario for this code pattern. There is an insurance portal application where a customer can register, sign in, purchase a policy, view policy details and surrender a policy. Currently all this functionality is available on a web portal. The business wants to expand the reach of its application, and use the new systems of engagement with customers. Chatbots are becoming increasingly common these days. It is a very convenient, and also a preferred way for customers to interact with businesses. It was decided to build a chatbot application that will co-exist with the web portal with the following features:
+The code pattern [Mask data for AI applications for security and privacy conformance](https://developer.ibm.com/patterns/create-read-only-view-of-data-with-sensitive-personal-information-masked-for-ai-apps/) demonstrated a methodology to mask sensitive data for a collaborating application. This code pattern demonstrates the following aspects:
+- Mask sensitive data for a collaborating application from within the enterprise or ecosystem pattern.
+- Authentication when the collaborating application is a chatbot ensuring data security.
+- Maintain control and enforce data policies when the collaborating application writes back to the data source.
+
+Let us consider the following scenario. There is an insurance portal application where a customer can register, sign in, purchase a policy, view policy details and surrender a policy. Currently all this functionality is available on a web portal. The business wants to expand the reach of its application, and use the new systems of engagement with customers. Chatbots are becoming increasingly common these days. It is a very convenient, and also a preferred way for customers to interact with businesses. It was decided to build a chatbot application that will co-exist with the web portal with the following features:
 - Register as a user 
 - Sign in to the chatbot
 - Buy an insurance policy
@@ -73,6 +78,7 @@ Security Verify has been used to implement authentication for the Chatbot applic
 8. [Configure Watson Query](#8-configure-watson-query)
 9. [Configure Watson Knowledge Studio](#9-configure-watson-knowledge-studio)
 10. [Access the Application](#10-access-the-application)
+11. [Summary](#11-summary)
 
 ### 1. Clone the repository
 
@@ -459,9 +465,12 @@ Login to Watson Query with `Data Collaborator` credentials. `Preview` the `POLIC
 
 In the next section, let us access the application and see the data privacy policies enforced for the chatbot.
 
+### 10. Access the application
+
+### 11. Summary
+In this code pattern you saw how to set up a data governance framework with security using Watson Knowledge Catalog, Watson Query and Security Verify to enforce data policies for a collaborating chatbot application. You saw how both write and read operations can be supported for a collaborating application while enforcing data policies.
 
 
-## Summary
 
 ## License
 This code pattern is licensed under the Apache License, Version 2. Separate third-party code objects invoked within this code pattern are licensed by their respective providers pursuant to their own separate licenses. Contributions are subject to the [Developer Certificate of Origin, Version 1.1](https://developercertificate.org/) and the [Apache License, Version 2](https://www.apache.org/licenses/LICENSE-2.0.txt).
