@@ -25,7 +25,7 @@ The data security requirements are as follows:
 
 ![process](images/process.png)
 
->Note: To keep the web portal application simple, we will build only the APIs for the web portal application(`Portal Svc`). The focus of this code pattern is on the chatbot application.
+>Note: To keep the web portal application simple, we will build only the APIs for the web portal application. We will refer to it as `Portal Svc`. The focus of this code pattern is on the chatbot application.
 
 In this code pattern, you will learn how to:
 - Set up data assets for governance in the Watson Knowledge Catalog
