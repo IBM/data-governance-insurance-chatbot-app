@@ -3,25 +3,35 @@
 
 Data Security & Privacy related laws and regulations have become more stringent and at the same time businesses are expected to open for ecosystem partners. This makes data governance very critical to avoid litigation, loss of competitive position and trust. 
 
-A collaborating application from within the enterprise or an ecosystem partner could require access to a data source for both read and write operations. A read operation must hence mask sensitive data  such as name, location, contact details, date of birth, credit card number, financial details and more. A data governance framework plays a critical role to enforce security and privacy at the same time be an enabler for business to achieve their strategy. 
+A collaborating application from within the enterprise or an ecosystem partner could require access to a data source for both read and write operations. A read operation must hence mask sensitive data  such as name, location, contact details, date of birth, credit card number, financial details and more. The write operation must ensure all the data policies are enforced. In such a scenario, a data governance framework plays a critical role to enforce data security and privacy at the same time be an enabler for business to achieve their strategy. 
 
-Let us consider the following scenario for this code pattern. There is an insurance portal application where a customer can register, sign in, purchase a policy, view policy details and surrender a policy. Currently all this functionality is available on a web portal. Chatbots are becoming increasingly common these days. It is a very convenient, and also a preferred way for customers to interact with businesses. It was decided to build a chatbot application that will co-exist with the web portal with the following features:
+Let us consider the following scenario for this code pattern. There is an insurance portal application where a customer can register, sign in, purchase a policy, view policy details and surrender a policy. Currently all this functionality is available on a web portal. The business wants to expand the reach of its application, and use the new systems of engagement with customers. Chatbots are becoming increasingly common these days. It is a very convenient, and also a preferred way for customers to interact with businesses. It was decided to build a chatbot application that will co-exist with the web portal with the following features:
 - Register as a user 
 - Sign in to the chatbot
 - Buy an insurance policy
 - View all policy details
 - Surrender a policy
 
-The web portal application owns the data and is responsible for enforcing the data policies. Now, it can be seen here that the Chatbot needs to having the following capabilities:
+The web portal application owns the data and is responsible for enforcing the data policies. Now, it can be seen here that the Chatbot application needs to having the following capabilities:
 - Read access to data from the web portal application with sesitive data masked.
 - Write access to data with data policies enforced.
 - Authenticate users of the chatbot.
+
+The data security requirements are as follows:
+- The web portal application owns the data and hence performs all write operations on the data with data policies enforced.
+- The chatbot application performs write operations on the data by invoking APIs exposed by the web portal application. This ensures control over the data and data security.
+- Every request from the chatbot application to the web portal application must be authenticated.
+- The chatbot application must have read access to the data with sensitive information like credit card number masked.
+
+![process](images/process.png)
+
+>Note: To keep the web portal application simple, we will build only the APIs for the web portal application. We will refer to it as `Portal Svc`. The focus of this code pattern is on the chatbot application.
 
 In this code pattern, you will learn how to:
 - Set up data assets for governance in the Watson Knowledge Catalog
 - Create data categories, classes, business terms and data protection rules for the data assets
 - Create virtualized view of the data on Watson Query with data policies enforced
-- Create a chatbot aapplication using Watson Assistant that invokes APIs exposed by the Web portal application for writing data to the data source, and consumes the read-only data with sensitive information masked from Watson Query.
+- Create a chatbot aapplication using Watson Assistant that invokes APIs exposed by the `Portal Svc` for writing data to the data source, and consumes the read-only data with sensitive information masked from Watson Query.
 
 Security Verify has been used to implement authentication for the Chatbot application.
 
@@ -445,7 +455,7 @@ Login to Watson Query with `Data Owner` credentials. `Preview` the `POLICYHOLDER
 	
 Login to Watson Query with `Data Collaborator` credentials. `Preview` the `POLICYHOLDER_POLICIES_VIEW`.
 
-![owner_view](images/collab_view.png)
+![collab_view](images/collab_view.png)
 
 In the next section, let us access the application and see the data privacy policies enforced for the chatbot.
 
