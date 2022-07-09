@@ -273,7 +273,7 @@ Ensure that the application is started successfully using the command `oc get po
 
 In this step, we will create two tables in the Db2 database - CUSTOMER and ORDERS table.
 
-Invoke the URL - http://ecomm-portal-chatbot.{{IngressSubdomainURL}}/portal/ecomm/setupdb
+Invoke the URL - http://portal-svc-governance.{{IngressSubdomainURL}}/ins/portalsvc/setupdb
 
 >Note: Replace {{IngressSubdomainURL}} with `Ingress subdomain` of the OpenShift cluster.
 
