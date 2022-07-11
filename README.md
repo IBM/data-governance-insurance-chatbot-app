@@ -469,7 +469,11 @@ In the next section, let us access the application and see the data privacy poli
 
 As mentioned in step 6, this code pattern uses the preview of chatbot provided by Watson Assistant service. To access the chatbot, go to Watson Assistant Service instance link on your cloud resources, click `Launch Watson Assistant` and then click on `Preview` in the left panel. Now you can converse with chatbot as shown.
 
-![demo](images/Demo-video.gif)
+![demo](images/demopart1.gif)
+
+![demo](images/demopart2.gif)
+
+![demo](images/demopart3.gif)
 
 
 ### 11. Summary
