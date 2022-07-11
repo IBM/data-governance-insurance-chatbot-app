@@ -283,9 +283,9 @@ Invoke the URL - http://portal-svc-governance.{{IngressSubdomainURL}}/ins/portal
 
 In the cloned repo folder - go to `sources/chatbot-svc/src/main/resources`. Open `db.config`.
 
-Here, you need to enter the `Watson Query` credentials noted earlier.  For mode, specify `managed` if using the SaaS version of Cloud Pak for Data, and `self` if Cloud Pak for Data is deployed on self-managed OpenShift cluster.  Specify the `JDBC url` for the `Watson Query`. The JDBC url will have `apikey` embedded for `managed` mode. This `apikey` is what was generated on the collaborator IBM Cloud account.
+Here, you need to enter the `Watson Query` credentials noted earlier.  For mode, specify `managed` if using the SaaS version of Cloud Pak for Data, and `self` if Cloud Pak for Data is deployed on self-managed OpenShift cluster.  Specify the `JDBC url` for the `Watson Query`. The JDBC url will have `apikey` embedded for `managed` mode. This `apikey` is what was generated on the `Data Collaborator` IBM Cloud account.
 For a self-managed cluster, enter the user id and password of the collaborator user. Save the file.
-> Note: the schema should be in uppercase of the username noted in Db2 credentials.
+
 ```
 jdbcurl=jdbc:db2://
 mode=managed
