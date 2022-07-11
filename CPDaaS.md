@@ -46,7 +46,7 @@ Login to the `Data Collaborator` IBM Cloud account. Search for `Watson Assistant
 
 #### 7. Create service credentials for DB2
 
-In the services list, click on the D2 service instance and select `Manage on IBM Cloud` on the menu. 
+Go to the `Data Owner` IBM Cloud account. In the services list, click on the D2 service instance and select `Manage on IBM Cloud` on the menu. 
 
 ![manage_in_cloud](images/manage_in_cloud.png)
 
