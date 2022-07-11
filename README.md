@@ -1,4 +1,4 @@
-# Work in progress
+
 # Digital decoupling and data sharing between Insurance portal and Insurance chatbot
 
 Data Security & Privacy related laws and regulations have become more stringent and at the same time businesses are expected to open for ecosystem partners. This makes data governance very critical to avoid litigation, loss of competitive position and trust. 
@@ -40,9 +40,9 @@ In this code pattern, you will learn how to:
 
 Security Verify has been used to implement authentication for the Chatbot application.
 
-![architecture](images/architecture.png)
-
 ## Flow
+
+![architecture](images/architecture.png)
 
 1. Create tables in Db2. The Db2 connection and the tables(as `Data Asset`) are added to the `Watson Knowledge Catalog(WKC)`. The data policies are configured for the data assets in `WKC`.
 2. Db2 is added as a data source in Watson Query. The needed tables are virtualized and a `View` is created by joining the virtualized tables. 
@@ -269,7 +269,7 @@ oc expose svc/portal-svc
 ```
 Ensure that the application is started successfully using the command `oc get pods`. Also make a note of the route using the command `oc get routes`. 
 
-#### 6.3 Configure Db2 database
+##### 7.1.4 Configure Db2 database
 
 In this step, we will create two tables in the Db2 database - CUSTOMER and ORDERS table.
 
@@ -467,9 +467,17 @@ In the next section, let us access the application and see the data privacy poli
 
 ### 10. Access the application
 
+As mentioned in step 6, this code pattern uses the preview of chatbot provided by Watson Assistant service. To access the chatbot, go to Watson Assistant Service instance link on your cloud resources, click `Launch Watson Assistant` and then click on `Preview` in the left panel. Now you can converse with chatbot as shown.
+
+![demo](images/demopart1.gif)
+
+![demo](images/demopart2.gif)
+
+![demo](images/demopart3.gif)
+
+
 ### 11. Summary
 In this code pattern you saw how to set up a data governance framework with security using Watson Knowledge Catalog, Watson Query and Security Verify to enforce data policies for a collaborating chatbot application. You saw how both write and read operations can be supported for a collaborating application while enforcing data policies.
-
 
 
 ## License
