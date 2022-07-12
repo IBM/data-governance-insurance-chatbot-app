@@ -6,7 +6,7 @@ Data Security & Privacy related laws and regulations have become more stringent 
 A collaborating application from within the enterprise or an ecosystem partner could require access to a data source for both read and write operations. A read operation must hence mask sensitive data  such as name, location, contact details, date of birth, credit card number, financial details and more. The write operation must ensure all the data policies are enforced. In such a scenario, a data governance framework plays a critical role to enforce data security and privacy at the same time be an enabler for business to achieve their strategy. 
 
 The code pattern [Mask data for AI applications for security and privacy conformance](https://developer.ibm.com/patterns/create-read-only-view-of-data-with-sensitive-personal-information-masked-for-ai-apps/) demonstrated a methodology to mask sensitive data for a collaborating application. This code pattern demonstrates the following aspects:
-- Mask sensitive data for a collaborating application from within the enterprise or ecosystem pattern.
+- Mask sensitive data for a collaborating application from within the enterprise or ecosystem partner.
 - Authentication when the collaborating application is a chatbot ensuring data security.
 - Maintain control and enforce data policies when the collaborating application writes back to the data source.
 
