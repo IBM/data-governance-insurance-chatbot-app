@@ -1,5 +1,5 @@
 
-# Implement data security and privacy for shared data between applications
+# Enforce data governance and security for shared data between applications
 
 Data Security & Privacy related laws and regulations have become more stringent and at the same time businesses are expected to open for ecosystem partners. This makes data governance very critical to avoid litigation, loss of competitive position and trust. 
 
