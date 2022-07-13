@@ -10,21 +10,21 @@ The code pattern [Mask data for AI applications for security and privacy conform
 - Authentication when the collaborating application is a chatbot ensuring data security.
 - Maintain control and enforce data policies when the collaborating application writes back to the data source.
 
-Let us consider the following scenario. There is an insurance portal application where a customer can register, sign in, purchase a policy, view policy details and surrender a policy. Currently all this functionality is available on a web portal. The business wants to expand the reach of its application, and use the new systems of engagement with customers. Chatbots are becoming increasingly common these days. It is a very convenient, and also a preferred way for customers to interact with businesses. It was decided to build a chatbot application that will co-exist with the web portal with the following features:
+Let us consider the following business scenario. There is an insurance portal application where a customer can register, sign in, purchase a policy, view policy details and surrender a policy. Currently all this functionality is available on a web portal. The business wants to enhance the reach of its application and build new systems of engagement  for their customers. This scenario is to engage a Chatbot to provide conversational and interactive experience for the customers for ease of use. The chatbot coexists with the web portal and provides the following features and business services: 
 - Register as a user 
 - Sign in to the chatbot
 - Buy an insurance policy
 - View all policy details
 - Surrender a policy
 
-The web portal application owns the data and is responsible for enforcing the data policies. Now, it can be seen here that the Chatbot application needs to having the following capabilities:
-- Read access to data from the web portal application with sesitive data masked.
-- Write access to data with data policies enforced.
+In this scenario, web portal application owns the data and is responsible for data governance enforcement. Engaging Chatbot as system of experience, it is required to expose data/entities to enable following capabilities:
 - Authenticate users of the chatbot.
+- Read access to data from the web portal application with sensitive data masked.
+- Write access to data with data policies enforced.
 
 The data security requirements are as follows:
 - The web portal application owns the data and hence performs all write operations on the data with data policies enforced.
-- The chatbot application performs write operations on the data by invoking APIs exposed by the web portal application. This ensures control over the data and data security.
+- The chatbot application performs write operations on the data by invoking APIs exposed by the web portal application. This ensures conformance to data governance and security.
 - Every request from the chatbot application to the web portal application must be authenticated.
 - The chatbot application must have read access to the data with sensitive information like credit card number masked.
 
