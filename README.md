@@ -173,7 +173,7 @@ For the action just created, click `Endpoints` on the left side navigation menu.
 
 ### 6. Setup Watson Assistant Chatbot
 
-Login to IBM Cloud. On the dashboard, click on the hamburger menu and click `Resource List`. Click on the Watson Assistant instance that you created earlier. Then click on `Launch Watson Assistant` button to launch Watson Assistant dashboard.
+Go to the Watson Assistant instance that you created earlier. Then click on `Launch Watson Assistant` button to launch Watson Assistant dashboard.
 
 - In the Watson Assistant home page, click `Create New +` option on the top panel.
 - Provide a name of your choice, say `InsuranceBot` and click `Create assistant`.
