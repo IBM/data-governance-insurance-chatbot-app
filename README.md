@@ -207,7 +207,7 @@ Go to the Watson Assistant instance that you created earlier. Then click on `Lau
 	</script>
 	```
 
-	Copy this code and paste on the homepage of the portal application. The chatbot will be integrated with your portal.
+	This code will later be copied and pasted inside the body tags of `chatbot.html` in the chatbot svc application. The chatbot will then be integrated with your portal. This step is described during the chatbot-svc deployment.
 
 Note that this code pattern uses the preview option to ease the process.
 
