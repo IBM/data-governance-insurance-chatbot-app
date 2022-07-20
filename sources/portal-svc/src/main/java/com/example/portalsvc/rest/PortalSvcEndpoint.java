@@ -38,7 +38,7 @@ public class PortalSvcEndpoint {
 
 	private static Properties props = new Properties();
 	private static Logger logger = Logger.getLogger(PortalSvcEndpoint.class.getName());
-	private static String ingressSubDomain = "portal-svc-governance"+ {{ingress-sub-domain}};
+	private static String ingressSubDomain = "portal-svc-governance"+ "{{ingress-sub-domain}}";
 
 	static {
 		try {
@@ -49,6 +49,29 @@ public class PortalSvcEndpoint {
 			logger.log(Level.SEVERE, "Error loading Security Verify configuration.");
 			e.printStackTrace();
 			throw new RuntimeException(e.getMessage());
+		}
+	}
+
+	@GET
+	@Path("/setupdb")
+	@Produces({ MediaType.TEXT_HTML })
+	public Response setUpDB() {
+		try {
+			DBUtil.setupDB();
+			return Response.ok("DB setup successfully!!").build();
+		} catch (Exception e) {
+			return Response.ok("DB setup failed -  "+e.getMessage()).build();
+		}
+	}
+
+	@GET
+	@Path("/chatbot")
+	@Produces({ MediaType.TEXT_HTML })
+	public InputStream getChatbotPage() {
+		try {
+			return this.getClass().getResourceAsStream("/chatbot.html");
+		} catch (Exception e) {
+			throw new RuntimeException("Exception returning chatbot.html", e);
 		}
 	}
 
@@ -111,7 +134,7 @@ public class PortalSvcEndpoint {
 			error.put("message", "Payment failed!");
 			return Response.serverError().build();
 		}
-		
+
 		return Response.ok(successHTML).build();
 	}
 
@@ -181,9 +204,9 @@ public class PortalSvcEndpoint {
 			}
 
 			String emailId = request.getParameter("emailid");
-			
+
 			String custId = DBUtil.getCustID(emailId);
-			
+
 			String cover = request.getParameter("cover");
 			premium = Math.round(Integer.valueOf(cover)*0.1);
 			String policyType = request.getParameter("policytype");
@@ -191,7 +214,7 @@ public class PortalSvcEndpoint {
 			if (frequency.equalsIgnoreCase("monthly"))
 				premium = Math.round(Integer.valueOf(cover)*0.1/12);
             System.out.println(emailId +" "+custId+" "+premium.toString()+" "+cover+" "+policyType+ " "+frequency);
-            
+
 			JSONObject itemObj = new JSONObject();
 			itemObj.put("PolicyType", policyType);
 			itemObj.put("Cover", cover);
