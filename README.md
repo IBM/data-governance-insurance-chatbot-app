@@ -316,8 +316,9 @@ apiClientSecret=
 ##### 7.2.3 Add chatbot script
 
 Open the file `sources/chatbot-svc/src/main/resources/chatbot.html`.
-Add the embed script you copied during the #6-setup-watson-assistant-chatbot, between the HTML body tags. Save the file.
+Add the embed script you copied during the [Watson Assistant Setup](README.md#6-setup-watson-assistant-chatbot), between the HTML body tags. Save the file.
 The chatbot will be accessible at the URL: http://chatbot-svc-governance.{{IngressSubdomainURL}}/ins/chatbotsvc/chatbot after deploying the service.
+>Note: Replace IngressSubdomainURL with the Ingress subdomain of the OpenShift cluster.
 
 ##### 7.2.4 Deploy application to the OpenShift cluster
 On the terminal window, got to the repository folder that we cloned earlier. 
