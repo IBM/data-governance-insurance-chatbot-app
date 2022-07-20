@@ -1,4 +1,4 @@
-### Create DB2, Watson Knowledge Studio and Watson Query on the self managed software mode for Cloud Pak for Data service
+### Create DB2, Watson Knowledge Studio, Watson Query and Watson Assistant on the self managed software mode for Cloud Pak for Data service
 
 #### 1. Install Cloud Pak for Data
 Login to IBM Cloud. Go to https://cloud.ibm.com/cloudpaks/data/overview.
