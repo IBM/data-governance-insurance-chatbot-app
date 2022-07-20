@@ -89,7 +89,7 @@ git clone https://github.com/IBM/data-governance-insurance-chatbot-app
 ```
 ### 2. Create IBM Cloud Services
 
-#### 2.1 Create DB2, Watson Knowledge Catalog and Watson Query service instances on Cloud Pak for Data
+#### 2.1 Create DB2, Watson Knowledge Catalog, Watson Query service and Watson Assistant instances on Cloud Pak for Data
 
 In the code pattern, we will be using Cloud Pak for Data.
 
