@@ -313,10 +313,16 @@ apiClientId=
 apiClientSecret=
 ```
 
-##### 7.2.3 Deploy application to the OpenShift cluster
+##### 7.2.3 Add chatbot script
+
+Open the file `sources/chatbot-svc/src/main/resources/chatbot.html`.
+Add the embed script you copied during the #6-setup-watson-assistant-chatbot, between the HTML body tags. Save the file.
+The chatbot will be accessible at the URL: http://chatbot-svc-governance.{{IngressSubdomainURL}}/ins/chatbotsvc/chatbot after deploying the service.
+
+##### 7.2.4 Deploy application to the OpenShift cluster
 On the terminal window, got to the repository folder that we cloned earlier. 
 Now change directory to `/sources/chatbot-svc` in the cloned repo folder.
-Run the following commands to deploy `Portal Service`.
+Run the following commands to deploy `Chatbot Service`.
 ```
 oc new-project governance
 mvn clean install
