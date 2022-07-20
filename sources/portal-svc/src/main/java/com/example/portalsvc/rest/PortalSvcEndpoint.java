@@ -64,16 +64,6 @@ public class PortalSvcEndpoint {
 		}
 	}
 
-	@GET
-	@Path("/chatbot")
-	@Produces({ MediaType.TEXT_HTML })
-	public InputStream getChatbotPage() {
-		try {
-			return this.getClass().getResourceAsStream("/chatbot.html");
-		} catch (Exception e) {
-			throw new RuntimeException("Exception returning chatbot.html", e);
-		}
-	}
 
 	@GET
 	@Path("/register")

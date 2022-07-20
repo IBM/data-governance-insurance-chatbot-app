@@ -28,10 +28,10 @@ import com.example.chatbotsvc.util.DBUtil;
 
 @Path("/chatbotsvc")
 public class ChatbotSvcEndpoint {
-	
+
 	private static Properties props = new Properties();
 	private static Logger logger = Logger.getLogger(ChatbotSvcEndpoint.class.getName());
-	
+
 	static {
 		try {
 			ClassLoader classLoader = ChatbotSvcEndpoint.class.getClassLoader();
@@ -44,6 +44,16 @@ public class ChatbotSvcEndpoint {
 		}
 	}
 
+	@GET
+	@Path("/chatbot")
+	@Produces({ MediaType.TEXT_HTML })
+	public InputStream getChatbotPage() {
+		try {
+			return this.getClass().getResourceAsStream("/chatbot.html");
+		} catch (Exception e) {
+			throw new RuntimeException("Exception returning chatbot.html", e);
+		}
+	}
 	
 	@GET
 	@Path("/getallpolicies")
@@ -60,14 +70,14 @@ public class ChatbotSvcEndpoint {
 			String emailId = request.getParameter("emailid");
 			System.out.println("Email -"+ emailId);
 			JSONObject resp = DBUtil.getAllPolicies(emailId);
-			
+
 			return Response.ok(resp.toString()).build();
 		} catch (Exception e) {
 			e.printStackTrace();
 			return Response.serverError().build();
 		}
 	}
-	
+
 	@GET
 	@Path("/getallactivepolicies")
 	@Produces({ MediaType.APPLICATION_JSON })
@@ -83,15 +93,15 @@ public class ChatbotSvcEndpoint {
 			String emailId = request.getParameter("emailid");
 			System.out.println("Email -"+ emailId);
 			JSONObject resp = DBUtil.getAllActivePolicies(emailId);
-			
+
 			return Response.ok(resp.toString()).build();
 		} catch (Exception e) {
 			e.printStackTrace();
 			return Response.serverError().build();
 		}
 	}
-	
-	
+
+
 	private boolean checkTokenIsValid(String token) {
 		try {
 			boolean isValidRequest = true;
